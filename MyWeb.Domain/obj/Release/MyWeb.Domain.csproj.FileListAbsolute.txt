@@ -1,0 +1,11 @@
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\MyWeb.Domain.dll
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\MyWeb.Domain.pdb
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\FluentNHibernate.dll
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\Iesi.Collections.dll
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\NHibernate.dll
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\FluentNHibernate.pdb
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\FluentNHibernate.xml
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\Iesi.Collections.xml
+F:\MySolution\MyWeb\MyWeb.Domain\bin\Release\NHibernate.xml
+F:\MySolution\MyWeb\MyWeb.Domain\obj\Release\MyWeb.Domain.dll
+F:\MySolution\MyWeb\MyWeb.Domain\obj\Release\MyWeb.Domain.pdb

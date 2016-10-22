@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model List<MyWeb.Domain.Domain.Person>
+
+<div id="dataDiv">
+    @Html.Partial("_Variants", Model)
+</div>
+
+<div id="createModal">
+    @using (Ajax.BeginForm("Create", "Home", new AjaxOptions
+  {
+      UpdateTargetId = "dataDiv",
+      HttpMethod = "Post",
+  }))
+    {
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input name="Name" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td><input name="Notes" type="text" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Create" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+<div id="editModal">
+    @using (Ajax.BeginForm("Edit", "Home", new AjaxOptions
+    {
+        UpdateTargetId = "dataDiv",
+        OnSuccess = "editSuccess",
+        HttpMethod = "Post",
+    }))
+    {
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input name="Name" id="Name" type="text" />
+                    <input name="Id" id="Id" type="text" style="display: none;" />
+                </td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td>
+                    <input name="Notes" id="Notes" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Edit" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+<script type="text/javascript">
+    $("#editModal").dialog({
+        modal: true,
+        autoOpen: false,
+        show: {
+            effect: "blind",
+            duration: 1000
+        },
+        hide: {
+            effect: "explode",
+            duration: 1000
+        },
+        width: 400
+    });
+
+    function editSuccess() {
+        $("#editModal").dialog("close");
+    }
+
+    //function createSuccess() {
+    //    $("#createModal").dialog("close");
+    //}
+</script>

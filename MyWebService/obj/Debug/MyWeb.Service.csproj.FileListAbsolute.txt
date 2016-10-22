@@ -1,0 +1,16 @@
+F:\MySolution\MyWeb\MyWebService\obj\Debug\MyWeb.Service.csprojResolveAssemblyReference.cache
+F:\MySolution\MyWeb\MyWebService\bin\Debug\MyWebService.dll
+F:\MySolution\MyWeb\MyWebService\bin\Debug\MyWebService.pdb
+F:\MySolution\MyWeb\MyWebService\bin\Debug\MyWeb.Domain.dll
+F:\MySolution\MyWeb\MyWebService\bin\Debug\MyWeb.Repostory.dll
+F:\MySolution\MyWeb\MyWebService\bin\Debug\FluentNHibernate.dll
+F:\MySolution\MyWeb\MyWebService\bin\Debug\NHibernate.dll
+F:\MySolution\MyWeb\MyWebService\bin\Debug\Iesi.Collections.dll
+F:\MySolution\MyWeb\MyWebService\bin\Debug\MyWeb.Domain.pdb
+F:\MySolution\MyWeb\MyWebService\bin\Debug\MyWeb.Repostory.pdb
+F:\MySolution\MyWeb\MyWebService\bin\Debug\FluentNHibernate.pdb
+F:\MySolution\MyWeb\MyWebService\bin\Debug\FluentNHibernate.xml
+F:\MySolution\MyWeb\MyWebService\bin\Debug\NHibernate.xml
+F:\MySolution\MyWeb\MyWebService\bin\Debug\Iesi.Collections.xml
+F:\MySolution\MyWeb\MyWebService\obj\Debug\MyWebService.dll
+F:\MySolution\MyWeb\MyWebService\obj\Debug\MyWebService.pdb

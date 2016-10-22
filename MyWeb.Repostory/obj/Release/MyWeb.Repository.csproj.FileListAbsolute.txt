@@ -1,0 +1,14 @@
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\MyWeb.Repostory.dll
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\MyWeb.Repostory.pdb
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\Iesi.Collections.dll
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\MyWeb.Domain.dll
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\NHibernate.dll
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\FluentNHibernate.dll
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\MyWeb.Domain.pdb
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\Iesi.Collections.xml
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\NHibernate.xml
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\FluentNHibernate.pdb
+F:\MySolution\MyWeb\MyWeb.Repostory\bin\Release\FluentNHibernate.xml
+F:\MySolution\MyWeb\MyWeb.Repostory\obj\Release\MyWeb.Repository.csprojResolveAssemblyReference.cache
+F:\MySolution\MyWeb\MyWeb.Repostory\obj\Release\MyWeb.Repostory.dll
+F:\MySolution\MyWeb\MyWeb.Repostory\obj\Release\MyWeb.Repostory.pdb
