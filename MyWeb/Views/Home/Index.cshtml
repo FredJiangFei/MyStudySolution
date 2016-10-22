@@ -4,6 +4,12 @@
 
 @model List<MyWeb.Domain.Domain.Person>
 
+<div ng-app="PersonApp" class="row">
+    <div ng-controller="PersonController">
+        {{message}}
+    </div>
+</div>
+
 <div id="dataDiv">
     @Html.Partial("_Variants", Model)
 </div>
