@@ -20,7 +20,7 @@
             <td>@m.Notes</td>
             <td>@m.RecordDate</td>
             <td>
-                @Ajax.ActionLink("Delete", "Delete", "Home", new {id = m.Id}, new AjaxOptions
+                @Ajax.ActionLink("Delete", "Delete", "Home", new { id = m.Id }, new AjaxOptions
                 {
                     UpdateTargetId = "dataDiv",
                     HttpMethod = "Post"
@@ -66,28 +66,6 @@
             $("#editModal").dialog("open");
         }
     });
-    //var editorVariants;
-    //$(function () {
-    //    $("#d_Variants").dataTable().fnDestroy();
-    //    editorVariants = $('#d_Variants').dataTable({
-    //        "bInfo": false,
-    //        "bServerSide": false,
-    //        'bPaginate': false,                      //是否分页。
-    //        "bProcessing": false,                    //当datatable获取数据时候是否显示正在处理提示信息。
-    //        'bFilter': false,                       //是否使用内置的过滤功能。
-    //        'bLengthChange': false,                  //是否允许用户自定义每页显示条数。
-    //        'sPaginationType': 'full_numbers'      //分页样式
-    //    });
-    //});
-
-    //$("#d_Variants tbody tr").click(function (e) {
-    //    var aData = editorVariants.fnGetData(this);
-    //    if (null != aData) {
-    //        $("#Id").val(aData[0]);
-    //        $("#Name").val(aData[1]);
-    //        $("#Notes").val(aData[3]);
-    //    }
-    //});
 </script>
 
 

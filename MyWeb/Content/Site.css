@@ -15,3 +15,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.row_selected 
+{
+    background-color:#E8F4FD!important;
+}

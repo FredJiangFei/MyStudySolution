@@ -1,4 +1,5 @@
-﻿using MyWebService.Interface;
+﻿using System.Collections.Generic;
+using MyWebService.Interface;
 using System.Web.Http;
 using MyWeb.Domain.Domain;
 
@@ -16,6 +17,11 @@ namespace MyWeb.Controllers
         public PersonController(IPersonService personService)
         {
             _personService = personService;
+        }
+
+        public List<Person> GetPesrons()
+        {
+            return _personService.GetPeopleList();
         }
 
         [HttpPost]

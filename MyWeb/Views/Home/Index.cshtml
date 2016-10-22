@@ -1,13 +1,10 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-
 @model List<MyWeb.Domain.Domain.Person>
 
-<div ng-app="PersonApp" class="row">
-    <div ng-controller="PersonController">
-        {{message}}
-    </div>
+<div ng-controller="PersonController" ng-init="init()">
+    {{message}}
 </div>
 
 <div id="dataDiv">
@@ -88,8 +85,4 @@
     function editSuccess() {
         $("#editModal").dialog("close");
     }
-
-    //function createSuccess() {
-    //    $("#createModal").dialog("close");
-    //}
 </script>
