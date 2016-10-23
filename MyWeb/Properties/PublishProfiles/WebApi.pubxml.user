@@ -10,6 +10,15 @@
     <_PublishTargetUrl>F:\MySolution\WebPublish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="Angular/app.js">
+      <publishTime>10/22/2016 20:54:18</publishTime>
+    </File>
+    <File Include="Angular/controller/person-controller.js">
+      <publishTime>10/23/2016 09:54:09</publishTime>
+    </File>
+    <File Include="Angular/service/person-service.js">
+      <publishTime>10/23/2016 09:46:16</publishTime>
+    </File>
     <File Include="Areas/HelpPage/HelpPage.css">
       <publishTime>10/19/2016 20:44:57</publishTime>
     </File>
@@ -134,7 +143,7 @@
       <publishTime>10/19/2016 20:44:53</publishTime>
     </File>
     <File Include="bin/MyWeb.dll">
-      <publishTime>10/22/2016 14:52:04</publishTime>
+      <publishTime>10/23/2016 10:37:50</publishTime>
     </File>
     <File Include="bin/MyWeb.Domain.dll">
       <publishTime>10/21/2016 23:58:53</publishTime>
@@ -268,8 +277,11 @@
     <File Include="Content/Customer.css">
       <publishTime>10/22/2016 14:03:35</publishTime>
     </File>
+    <File Include="Content/jquery.dataTables.min.css">
+      <publishTime>10/22/2016 21:20:25</publishTime>
+    </File>
     <File Include="Content/Site.css">
-      <publishTime>10/19/2016 20:44:30</publishTime>
+      <publishTime>10/22/2016 21:19:33</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>10/19/2016 20:44:30</publishTime>
@@ -296,13 +308,19 @@
       <publishTime>10/20/2016 22:53:24</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/21/2016 22:37:53</publishTime>
+      <publishTime>10/22/2016 16:11:39</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js">
+      <publishTime>10/22/2016 16:11:38</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/19/2016 20:44:42</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
       <publishTime>10/19/2016 20:44:41</publishTime>
+    </File>
+    <File Include="Scripts/errors.json">
+      <publishTime>10/22/2016 16:11:29</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>10/19/2016 20:44:50</publishTime>
@@ -312,6 +330,12 @@
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
       <publishTime>10/19/2016 20:44:49</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.min.js">
+      <publishTime>10/22/2016 21:08:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery.min.js">
+      <publishTime>10/22/2016 16:03:40</publishTime>
     </File>
     <File Include="Scripts/jquery.unobtrusive-ajax.js">
       <publishTime>10/21/2016 22:37:53</publishTime>
@@ -340,6 +364,9 @@
     <File Include="Scripts/respond.min.js">
       <publishTime>10/19/2016 20:44:59</publishTime>
     </File>
+    <File Include="Scripts/version.json">
+      <publishTime>10/22/2016 16:10:36</publishTime>
+    </File>
     <File Include="Scripts/_references.js">
       <publishTime>10/21/2016 22:37:53</publishTime>
     </File>
@@ -356,10 +383,13 @@
       <publishTime>10/19/2016 20:44:30</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/22/2016 14:08:58</publishTime>
+      <publishTime>10/22/2016 22:33:21</publishTime>
+    </File>
+    <File Include="Views/Shared/_MVCAjax.cshtml">
+      <publishTime>10/23/2016 09:41:52</publishTime>
     </File>
     <File Include="Views/Shared/_Variants.cshtml">
-      <publishTime>10/22/2016 14:36:17</publishTime>
+      <publishTime>10/22/2016 21:28:28</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/19/2016 21:01:16</publishTime>
@@ -368,7 +398,7 @@
       <publishTime>10/19/2016 20:44:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/22/2016 14:52:06</publishTime>
+      <publishTime>10/23/2016 10:37:51</publishTime>
     </File>
   </ItemGroup>
 </Project>

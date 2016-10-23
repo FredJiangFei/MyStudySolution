@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MyWebService.Interface;
 using System.Web.Http;
 using MyWeb.Domain.Domain;
@@ -19,9 +20,22 @@ namespace MyWeb.Controllers
             _personService = personService;
         }
 
+        [HttpGet]
+        [Route("Persons")]
         public List<Person> GetPesrons()
         {
-            return _personService.GetPeopleList();
+            return  new List<Person>
+            {
+                new Person
+                {
+                    Id = 10,
+                    BirthDay = DateTime.Now,
+                    Name = "Fred",
+                    Notes = "Hello World",
+                    RecordDate = DateTime.Now.AddDays(-1)
+                }
+            };
+            //return _personService.GetPeopleList();
         }
 
         [HttpPost]

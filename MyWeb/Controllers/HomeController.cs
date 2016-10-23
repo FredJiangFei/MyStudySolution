@@ -6,41 +6,40 @@ namespace MyWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPersonService _personService;
+        //private readonly IPersonService _personService;
 
-        public HomeController(IPersonService personService)
-        {
-            _personService = personService;
-        }
+        //public HomeController(IPersonService personService)
+        //{
+        //    _personService = personService;
+        //}
       
         public ActionResult Index()
         {
-            var persons = _personService.GetPeopleList();
-            return View(persons);
+            return View();
         }
 
-        public ActionResult Create(Person person)
-        {
-            _personService.Create(person);
-            return PartialPeoples();
-        }
+        //public ActionResult Create(Person person)
+        //{
+        //    _personService.Create(person);
+        //    return PartialPeoples();
+        //}
 
-        public ActionResult Edit(Person person)
-        {
-            _personService.Edit(person);
-            return PartialPeoples();
-        }
+        //public ActionResult Edit(Person person)
+        //{
+        //    _personService.Edit(person);
+        //    return PartialPeoples();
+        //}
 
-        public ActionResult Delete(int id)
-        {
-            _personService.Delete(id);
-            return PartialPeoples();
-        }
+        //public ActionResult Delete(int id)
+        //{
+        //    _personService.Delete(id);
+        //    return PartialPeoples();
+        //}
 
-        private PartialViewResult PartialPeoples()
-        {
-            var persons = _personService.GetPeopleList();
-            return PartialView("_Variants", persons);
-        }
+        //private PartialViewResult PartialPeoples()
+        //{
+        //    var persons = _personService.GetPeopleList();
+        //    return PartialView("_Variants", persons);
+        //}
     }
 }

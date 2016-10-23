@@ -239,6 +239,7 @@
     <Content Include="Views\Shared\_Variants.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
+    <Content Include="Views\Shared\_MVCAjax.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
