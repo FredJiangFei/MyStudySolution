@@ -20,17 +20,21 @@ namespace MyWeb.Controllers
             var message = Request.Content.ReadAsStringAsync().Result;
 
             var wechat = XmlUtil.Deserialize(typeof(Wechat), message) as Wechat;
-            var toUserName = wechat.ToUserName;
-            var fromUserName = wechat.FromUserName;
             var msgType = wechat.MsgType;
-            var content = wechat.Content;
+
+            var wechatReturn = new Wechat
+            {
+                ToUserName = wechat.FromUserName,
+                FromUserName = wechat.ToUserName,
+                MsgType = msgType
+            };
 
             switch (msgType)
             {
                 case "text":
                     {
-                        var returnMessage = content;
-                        var sendMessage = GetSendMessage(fromUserName, returnMessage, toUserName);
+                        wechatReturn.Content = wechat.Content;
+                        var sendMessage = GetSendMessage(wechatReturn);
                         return GetReturn(sendMessage);
                     }
                 case "event":
@@ -38,54 +42,31 @@ namespace MyWeb.Controllers
                         var eventStr = wechat.Event;
                         if (eventStr == "subscribe")
                         {
-                            var returnMessage = "欢迎关注**账号 [微笑]";
-                            var sendMessage = GetSendMessage(fromUserName, returnMessage, toUserName);
+                            wechatReturn.Content = "欢迎关注**账号 [微笑]";
+                            var sendMessage = GetSendMessage(wechatReturn);
                             return GetReturn(sendMessage);
                         }
                         return GetReturn("error");
                     }
                 case "image":
-                {
-                    //var sendMessage = GetSendMessage(fromUserName, wechat.MediaId, toUserName);
-                    var createTime = ConvertDateTimeInt(DateTime.Now);
-
-                    var sendMessage = string.Format(@"<xml>
-                                                <ToUserName><![CDATA[{0}]]></ToUserName>
-                                                <FromUserName><![CDATA[{1}]]></FromUserName>
-                                                <CreateTime>{2}</CreateTime>
-                                                <MsgType><![CDATA[{3}]]></MsgType>
-                                                <Image>
-                                                <MediaId><![CDATA[{4}]]></MediaId>
-                                                </Image>
-                                               </xml>", toUserName, fromUserName, createTime, msgType, wechat.MediaId);
-
-                    return GetReturn(sendMessage);
+                    {
+                        wechatReturn.Image = new Image
+                        {
+                            MediaId = wechat.MediaId
+                        };
+                        var sendMessage = GetSendMessage(wechatReturn);
+                        return GetReturn(sendMessage);
                     }
                 default:
                     return GetReturn("error");
             }
         }
 
-        public string GetSendMessage(string toUserName, string content, string fromUserName, string msgType = "text")
+        public string GetSendMessage(Wechat wechat)
         {
-            var createTime = ConvertDateTimeInt(DateTime.Now);
-            //var returnMessage = new Wechat
-            //{
-            //    ToUserName = toUserName,
-            //    FromUserName = fromUserName,
-            //    CreateTime = createTime,
-            //    MsgType = msgType,
-            //    Content = content
-            //};
-            //return XmlUtil.Serializer(typeof(Wechat), returnMessage);
-
-            return string.Format(@"<xml>
-                                    <ToUserName><![CDATA[{0}]]></ToUserName>
-                                    <FromUserName><![CDATA[{1}]]></FromUserName>
-                                    <CreateTime>{2}</CreateTime>
-                                    <MsgType><![CDATA[{3}]]></MsgType>
-                                    <Content><![CDATA[{4}]]></Content>
-                                   </xml>", toUserName, fromUserName, createTime, msgType, content);
+            wechat.CreateTime = ConvertDateTimeInt(DateTime.Now);
+            var result = XmlUtil.Serializer(typeof(Wechat), wechat);
+            return result;
         }
 
         private int ConvertDateTimeInt(DateTime time)
