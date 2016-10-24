@@ -182,6 +182,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Wechat.cs" />
+    <Compile Include="Tool\XmlUtil.cs" />
     <Content Include="Angular\service\person-service.js" />
     <Content Include="Angular\app.js" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -190,6 +192,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\WechatController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">

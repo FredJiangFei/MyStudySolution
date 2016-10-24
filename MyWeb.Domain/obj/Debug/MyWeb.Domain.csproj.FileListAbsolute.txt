@@ -1,4 +1,3 @@
-F:\MySolution\MyWeb\MyWeb.Domain\obj\Debug\MyWeb.Domain.csprojResolveAssemblyReference.cache
 F:\MySolution\MyWeb\MyWeb.Domain\bin\Debug\MyWeb.Domain.dll
 F:\MySolution\MyWeb\MyWeb.Domain\bin\Debug\MyWeb.Domain.pdb
 F:\MySolution\MyWeb\MyWeb.Domain\bin\Debug\FluentNHibernate.dll
