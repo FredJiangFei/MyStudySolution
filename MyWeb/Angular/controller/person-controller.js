@@ -3,12 +3,21 @@
         $scope.getPersons();
     }
 
-    $scope.getPersons = function() {
+
+
+    $scope.getPersons = function () {
+        $scope.loadingData = true;
         PersonService.getPersons().success(function(result) {
             $scope.persons = result;
-        }).error(function(error) {
+            $scope.loadingData = false;
+        }).error(function (error) {
+            $scope.loadingData = false;
             $scope.status = 'Unable to load customer data: ' + error.message;
         });
     }
 
+    $scope.showCreateModal = function () {
+
+        $("#createPersonModal").modal("show");
+    }
 });

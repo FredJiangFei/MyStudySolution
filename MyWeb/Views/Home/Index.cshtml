@@ -4,30 +4,63 @@
 @model List<MyWeb.Domain.Domain.Person>
 
 <div ng-controller="PersonController" ng-init="init()">
-    <table class="table">
+    <div class="row row-centered loading-indicator">
+        <button type="button" class="btn btn-default" ng-click="showCreateModal()">
+            Create Person
+        </button>
+    </div>
+    <div class="row row-centered loading-indicator" ng-show="loadingData">
+        <span class="block loading-bar shadow-depth-1">
+            <i class="fa fa-spinner fa-spin"></i>
+        </span>
+    </div>
+    <table class="table" ng-show="!loadingData">
         <thead>
-            <tr>
-                <th>Id</th>
-                <td>Name</td>
-                <td>BirthDay</td>
-                <td>Notes</td>
-                <td>RecordDate</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>Name</td>
+            <td>BirthDay</td>
+            <td>Notes</td>
+            <td>RecordDate</td>
+        </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="p in persons">
-                <td>{{p.Id}}</td>
-                <td>{{p.Name}}</td>
-                <td>{{p.BirthDay}}</td>
-                <td>{{p.Notes}}</td>
-                <td>{{p.RecordDate}}</td>
-            </tr>
+        <tr ng-repeat="p in persons">
+            <td>{{p.Id}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.BirthDay}}</td>
+            <td>{{p.Notes}}</td>
+            <td>{{p.RecordDate}}</td>
+        </tr>
         </tbody>
     </table>
-</div>
 
-@*<div id="dataDiv">
-        @Html.Partial("_Variants", Model)
+    <div class="modal fade" id="createPersonModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" ng-click="createPerson()" class="btn btn-success">
+                        <span ng-show="!creating">Create</span>
+                        <span ng-show="creating">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="2">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    @Html.Partial("_MVCAjax")*@
+</div>
 
