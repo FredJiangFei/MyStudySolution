@@ -182,6 +182,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Intaller\DependencyResolver.cs" />
+    <Compile Include="Intaller\DependencyScope.cs" />
     <Compile Include="Model\Wechat.cs" />
     <Compile Include="Tool\XmlUtil.cs" />
     <Content Include="Angular\service\person-service.js" />
@@ -199,7 +201,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Intaller\MyWebDependencyInstaller.cs" />
-    <Compile Include="Intaller\WindsorControllerFactory.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />

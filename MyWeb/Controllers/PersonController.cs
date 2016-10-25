@@ -11,10 +11,6 @@ namespace MyWeb.Controllers
     {
         private readonly IPersonService _personService;
 
-        public PersonController()
-        {
-        }
-
         public PersonController(IPersonService personService)
         {
             _personService = personService;
@@ -24,18 +20,7 @@ namespace MyWeb.Controllers
         [Route("Persons")]
         public List<Person> GetPesrons()
         {
-            return  new List<Person>
-            {
-                new Person
-                {
-                    Id = 10,
-                    BirthDay = DateTime.Now,
-                    Name = "Fred",
-                    Notes = "Hello World",
-                    RecordDate = DateTime.Now.AddDays(-1)
-                }
-            };
-            //return _personService.GetPeopleList();
+            return _personService.GetPeopleList();
         }
 
         [HttpPost]

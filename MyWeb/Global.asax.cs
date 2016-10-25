@@ -14,21 +14,15 @@ namespace MyWeb
         private WindsorContainer _container;
         protected void Application_Start()
         {
-            InitializeWindsor();
-
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
 
-        private void InitializeWindsor()
-        {
             _container = new WindsorContainer();
             _container.Install(FromAssembly.This());
-
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(_container.Kernel));
+            GlobalConfiguration.Configuration.DependencyResolver = new Intaller.DependencyResolver(_container.Kernel);
         }
 
         protected void Application_End()
