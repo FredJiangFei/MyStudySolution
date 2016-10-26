@@ -21,3 +21,4 @@ F:\MySolution\MyWeb\MyStudySolution\MyWeb.Domain\bin\Debug\NHibernate.xml
 F:\MySolution\MyWeb\MyStudySolution\MyWeb.Domain\obj\Debug\MyWeb.Domain.csprojResolveAssemblyReference.cache
 F:\MySolution\MyWeb\MyStudySolution\MyWeb.Domain\obj\Debug\MyWeb.Domain.dll
 F:\MySolution\MyWeb\MyStudySolution\MyWeb.Domain\obj\Debug\MyWeb.Domain.pdb
+F:\MySolution\MyWeb\MyWeb.Domain\obj\Debug\MyWeb.Domain.csprojResolveAssemblyReference.cache

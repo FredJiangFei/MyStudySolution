@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -7,12 +8,14 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using MyWeb.Domain.Domain;
 using MyWeb.Domain.Mapping;
 using MyWeb.Repostory.Repository;
 using MyWebService.Implement;
 using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 
-namespace MyWeb.Intaller.WebApi
+namespace MyWeb.Intaller
 {
     public class MyWebDependencyInstaller : IWindsorInstaller
     {
@@ -35,10 +38,40 @@ namespace MyWeb.Intaller.WebApi
         private static ISessionFactory CreateNhSessionFactory()
         {
             var connStr = ConfigurationManager.ConnectionStrings["PhoneBook"].ConnectionString;
-            return Fluently.Configure()
+            var mappings = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connStr))
-                .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(PersonMap))))
-                .BuildSessionFactory();
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<PersonMap>());
+
+            var configuration = mappings.BuildConfiguration();
+            GenerateDatabase(configuration);
+
+            return mappings.BuildSessionFactory();
+        }
+
+        private static ISessionFactory _sessionFactory;
+        private static void GenerateDatabase(NHibernate.Cfg.Configuration configuration)
+        {
+            var exporter = new SchemaExport(configuration);
+            exporter.Execute(true, true, false);
+            _sessionFactory = configuration.BuildSessionFactory();
+
+            AddSeeds();
+        }
+
+        private static void AddSeeds()
+        {
+            var p = new Person
+            {
+                Name = "Fred",
+                BirthDay = new DateTime(1989, 2, 17),
+                Notes = "Handsome",
+                RecordDate = DateTime.Now
+            };
+
+            using (ISession session = _sessionFactory.OpenSession())
+            {
+                session.Save(p);
+            }
         }
     }
 }

@@ -17,7 +17,5 @@ namespace MyWeb.Domain.Domain
         public virtual string Notes { get; set; }
 
         public virtual DateTime RecordDate { get; set; }
-
-        public virtual int CityId { get; set; }
     }
 }
