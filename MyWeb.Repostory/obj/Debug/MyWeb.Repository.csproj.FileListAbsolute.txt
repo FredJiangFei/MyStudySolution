@@ -12,3 +12,17 @@ F:\MySolution\MyWeb\MyWeb.Repostory\bin\Debug\FluentNHibernate.pdb
 F:\MySolution\MyWeb\MyWeb.Repostory\bin\Debug\FluentNHibernate.xml
 F:\MySolution\MyWeb\MyWeb.Repostory\obj\Debug\MyWeb.Repostory.dll
 F:\MySolution\MyWeb\MyWeb.Repostory\obj\Debug\MyWeb.Repostory.pdb
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\MyWeb.Repostory.dll
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\MyWeb.Repostory.pdb
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\Iesi.Collections.dll
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\MyWeb.Domain.dll
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\NHibernate.dll
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\FluentNHibernate.dll
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\MyWeb.Domain.pdb
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\Iesi.Collections.xml
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\NHibernate.xml
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\FluentNHibernate.pdb
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\bin\Debug\FluentNHibernate.xml
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\obj\Debug\MyWeb.Repository.csprojResolveAssemblyReference.cache
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\obj\Debug\MyWeb.Repostory.dll
+F:\MySolution\MyWeb\MyStudySolution\MyWeb.Repostory\obj\Debug\MyWeb.Repostory.pdb

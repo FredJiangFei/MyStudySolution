@@ -5,7 +5,7 @@ using System.Web.Http.Dependencies;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Lifestyle;
 
-namespace MyWeb.Intaller
+namespace MyWeb.Intaller.WebApi
 {
     public class DependencyScope : IDependencyScope
     {

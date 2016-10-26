@@ -4,7 +4,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;   
+using Castle.Windsor;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using MyWeb.Domain.Mapping;
@@ -12,7 +12,7 @@ using MyWeb.Repostory.Repository;
 using MyWebService.Implement;
 using NHibernate;
 
-namespace MyWeb.Intaller
+namespace MyWeb.Intaller.WebApi
 {
     public class MyWebDependencyInstaller : IWindsorInstaller
     {
@@ -27,8 +27,8 @@ namespace MyWeb.Intaller
                 Classes.FromAssembly(Assembly.GetAssembly(typeof(PersonService))).InSameNamespaceAs<PersonService>().WithService.DefaultInterfaces().LifestyleTransient(),
 
                 //All MVC controllers
-                Classes.FromThisAssembly().BasedOn<IController>().LifestyleTransient(),
-                Classes.FromThisAssembly().BasedOn<ApiController>().LifestyleTransient()
+                Classes.FromThisAssembly().BasedOn<ApiController>().LifestyleTransient(),
+                Classes.FromThisAssembly().BasedOn<IController>().LifestyleTransient()
             );
         }
 

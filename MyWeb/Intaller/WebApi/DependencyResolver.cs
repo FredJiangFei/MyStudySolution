@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Http.Dependencies;
 using Castle.MicroKernel;
 
-namespace MyWeb.Intaller
+namespace MyWeb.Intaller.WebApi
 {
     internal class DependencyResolver : System.Web.Http.Dependencies.IDependencyResolver
     {
@@ -12,7 +12,7 @@ namespace MyWeb.Intaller
 
         public DependencyResolver(IKernel kernel)
         {
-            this._kernel = kernel;
+            _kernel = kernel;
         }
 
         public IDependencyScope BeginScope()

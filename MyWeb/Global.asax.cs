@@ -5,7 +5,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
-using MyWeb.Intaller;
+using MyWeb.Intaller.Mvc;
+using DependencyResolver = MyWeb.Intaller.WebApi.DependencyResolver;
 
 namespace MyWeb
 {
@@ -22,7 +23,10 @@ namespace MyWeb
 
             _container = new WindsorContainer();
             _container.Install(FromAssembly.This());
-            GlobalConfiguration.Configuration.DependencyResolver = new Intaller.DependencyResolver(_container.Kernel);
+            GlobalConfiguration.Configuration.DependencyResolver = new DependencyResolver(_container.Kernel);
+
+            var controllerFactory = new WindsorControllerFactory(_container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
         }
 
         protected void Application_End()
