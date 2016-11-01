@@ -10,17 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var person_service_1 = require('./person.service');
-require('./rxjs-operators');
+//import './rxjs-operators';
 var AppComponent = (function () {
     function AppComponent(personService) {
         this.personService = personService;
         this.title = 'Tour of Heroes';
     }
     AppComponent.prototype.getHeroes = function () {
-        var _this = this;
-        this.personService.getHeroes()
-            .subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
-        //this.heroes = this.personService.getHeroes();
+        //this.personService.getHeroes()
+        //    .subscribe(
+        //    heroes => this.heroes = heroes,
+        //    error => this.errorMessage = <any>error);
+        this.heroes = this.personService.getHeroes();
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getHeroes();

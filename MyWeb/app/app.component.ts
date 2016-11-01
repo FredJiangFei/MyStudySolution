@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Person } from './person';
 import { PersonService } from './person.service';
-import './rxjs-operators';
+//import './rxjs-operators';
 
 
 @Component({
@@ -24,12 +24,12 @@ export class AppComponent implements OnInit {
     constructor(private personService: PersonService) { }
 
     getHeroes(): void {
-        this.personService.getHeroes()
-            .subscribe(
-            heroes => this.heroes = heroes,
-            error => this.errorMessage = <any>error);
+        //this.personService.getHeroes()
+        //    .subscribe(
+        //    heroes => this.heroes = heroes,
+        //    error => this.errorMessage = <any>error);
 
-        //this.heroes = this.personService.getHeroes();
+        this.heroes = this.personService.getHeroes();
     }
 
     ngOnInit(): void {
