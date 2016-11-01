@@ -9,25 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
-var forms_1 = require('@angular/forms');
-/* App Root */
-var app_component_1 = require('./app.component');
-var person_service_1 = require('./person.service');
-var AppModule = (function () {
-    function AppModule() {
+var router_1 = require('@angular/router');
+exports.routes = [
+    { path: '', redirectTo: 'contact', pathMatch: 'full' },
+    { path: 'crisis', loadChildren: 'app/crisis/crisis.module#CrisisModule' },
+    { path: 'heroes', loadChildren: 'app/hero/hero.module#HeroModule' }
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
     }
-    AppModule = __decorate([
+    AppRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [person_service_1.PersonService]
+            imports: [router_1.RouterModule.forRoot(exports.routes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], AppRoutingModule);
+    return AppRoutingModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=app-routing.module.js.map
