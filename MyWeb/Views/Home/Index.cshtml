@@ -3,8 +3,6 @@
 }
 @model List<MyWeb.Domain.Domain.Person>
 
-@Html.Partial("_Variants", Model)
-
 <div ng-controller="PersonController" ng-init="init()">
     <div class="row row-centered loading-indicator">
         <button type="button" class="btn btn-default" ng-click="showCreateModal()">
