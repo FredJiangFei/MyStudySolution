@@ -18,9 +18,9 @@ namespace MyWeb.Controllers
 
         [HttpGet]
         [Route("Persons")]
-        public List<Person> GetPesrons()
+        public Person[] GetPesrons()
         {
-            return _personService.GetPeopleList();
+            return _personService.GetPeopleList().ToArray();
         }
 
         [HttpPost]

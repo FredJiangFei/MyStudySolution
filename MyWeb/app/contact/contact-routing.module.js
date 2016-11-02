@@ -9,25 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
-var forms_1 = require('@angular/forms');
-/* App Root */
-var app_component_1 = require('./app.component');
-var person_service_1 = require('./person.service');
-var AppModule = (function () {
-    function AppModule() {
+var router_1 = require('@angular/router');
+var contact_component_1 = require('./contact.component');
+var ContactRoutingModule = (function () {
+    function ContactRoutingModule() {
     }
-    AppModule = __decorate([
+    ContactRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [person_service_1.PersonService]
+            imports: [router_1.RouterModule.forChild([
+                    { path: 'contact', component: contact_component_1.ContactComponent }
+                ])],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ContactRoutingModule);
+    return ContactRoutingModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ContactRoutingModule = ContactRoutingModule;
+//# sourceMappingURL=contact-routing.module.js.map

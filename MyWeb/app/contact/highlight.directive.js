@@ -9,25 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
-var forms_1 = require('@angular/forms');
-/* App Root */
-var app_component_1 = require('./app.component');
-var person_service_1 = require('./person.service');
-var AppModule = (function () {
-    function AppModule() {
+var HighlightDirective = (function () {
+    function HighlightDirective(renderer, el) {
+        renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'powderblue');
+        console.log("* Contact highlight called for " + el.nativeElement.tagName);
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [person_service_1.PersonService]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    HighlightDirective = __decorate([
+        core_1.Directive({ selector: '[highlight], input' }), 
+        __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
+    ], HighlightDirective);
+    return HighlightDirective;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.HighlightDirective = HighlightDirective;
+//# sourceMappingURL=highlight.directive.js.map
