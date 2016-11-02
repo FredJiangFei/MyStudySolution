@@ -19,9 +19,10 @@ export class PersonService {
     addPerson(item: Person) {
         console.log(item);
         console.log(item.Name);
-
+      
         let url = 'api/Person'; 
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        this.http.post(url, JSON.stringify(item), { headers: headers });
+        let body = JSON.stringify(item);   
+        //var headers = new Headers({ 'Content-Type': 'json' });
+        this.http.post(url, {"Name":"fff"});//, { headers: headers });
     }
 }
