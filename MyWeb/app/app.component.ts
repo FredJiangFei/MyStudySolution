@@ -34,9 +34,9 @@ export class AppComponent implements OnInit {
 
     clickMessage = '';
     onClickMe() {
-        console.log("start");
         let p = new Person("world");
-        this.personService.addPerson(p); 
+        p.Id = 1;
+        this.personService.updatePerson(p); 
     }
 
     ngOnInit(): void {

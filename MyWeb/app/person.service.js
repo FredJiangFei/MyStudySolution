@@ -24,10 +24,24 @@ var PersonService = (function () {
     PersonService.prototype.addPerson = function (item) {
         console.log(item);
         console.log(item.Name);
-        var url = 'api/Person';
+        var url = 'api/Persons';
         var body = JSON.stringify(item);
         var headers = new http_1.Headers({ 'Content-Type': 'json' });
-        this.http.post(url, body, { headers: headers });
+        this.http.post(url, body, { headers: headers }).map(function (res) { return res.json(); })
+            .do(function (data) {
+            console.log(data);
+        });
+        ;
+    };
+    PersonService.prototype.updatePerson = function (item) {
+        var url = 'api/Persons';
+        var body = JSON.stringify(item);
+        var headers = new http_1.Headers({ 'Content-Type': 'json' });
+        this.http.put(url, body, { headers: headers }).map(function (res) { return res.json(); })
+            .do(function (data) {
+            console.log(data);
+        });
+        ;
     };
     PersonService = __decorate([
         core_1.Injectable(), 

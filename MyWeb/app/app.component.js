@@ -27,7 +27,8 @@ var AppComponent = (function () {
     AppComponent.prototype.onClickMe = function () {
         console.log("start");
         var p = new person_1.Person("world");
-        this.personService.addPerson(p);
+        p.Id = 1;
+        this.personService.updatePerson(p).subscribe(function (data) { return console.log(data); });
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getPersons();

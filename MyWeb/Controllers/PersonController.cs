@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using MyWebService.Interface;
-using System.Web.Http;
+﻿using System.Web.Http;
 using MyWeb.Domain.Domain;
+using MyWebService.Interface;
 
 namespace MyWeb.Controllers
 {
@@ -24,21 +22,21 @@ namespace MyWeb.Controllers
         }
 
         [HttpPost]
-        [Route("Person")]
+        [Route("Persons")]
         public void Create(Person person)
         {
             _personService.Create(person);
         }
 
         [HttpPut]
-        [Route("Person")]
+        [Route("Persons")]
         public void Edit(Person person)
         {
             _personService.Edit(person);
         }
 
-        [HttpGet]
-        [Route("Person")]
+        [HttpDelete]
+        [Route("Persons")]
         public void Delete(int id)
         {
             _personService.Delete(id);
