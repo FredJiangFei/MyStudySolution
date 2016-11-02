@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var Observable_1 = require('rxjs/Observable');
 require('rxjs/Rx');
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/toPromise');
@@ -19,29 +20,30 @@ var PersonService = (function () {
     }
     PersonService.prototype.getPersons = function () {
         var url = 'api/Persons';
-        return this.http.get(url).map(function (res) { return res.json(); });
+        return this.http.get(url)
+            .map(function (responce) { return responce.json(); })
+            .catch(function (error) {
+            console.log(error);
+            return Observable_1.Observable.throw(error);
+        });
     };
     PersonService.prototype.addPerson = function (item) {
-        console.log(item);
-        console.log(item.Name);
-        var url = 'api/Persons';
+        var url = 'api/Person';
         var body = JSON.stringify(item);
-        var headers = new http_1.Headers({ 'Content-Type': 'json' });
-        this.http.post(url, body, { headers: headers }).map(function (res) { return res.json(); })
-            .do(function (data) {
-            console.log(data);
-        });
-        ;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post(url, body, options);
     };
     PersonService.prototype.updatePerson = function (item) {
-        var url = 'api/Persons';
+        var url = 'api/Person';
         var body = JSON.stringify(item);
-        var headers = new http_1.Headers({ 'Content-Type': 'json' });
-        this.http.put(url, body, { headers: headers }).map(function (res) { return res.json(); })
-            .do(function (data) {
-            console.log(data);
-        });
-        ;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.put(url, body, options);
+    };
+    PersonService.prototype.deletePerson = function (id) {
+        var url = 'api/Person?id=' + id;
+        return this.http.delete(url);
     };
     PersonService = __decorate([
         core_1.Injectable(), 

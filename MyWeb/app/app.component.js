@@ -15,20 +15,28 @@ require('rxjs/Rx');
 var AppComponent = (function () {
     function AppComponent(personService) {
         this.personService = personService;
-        this.title = 'Tour of Person';
-        this.clickMessage = '';
     }
     AppComponent.prototype.getPersons = function () {
         var _this = this;
-        this.personService.getPersons().subscribe(function (persons) {
-            _this.persons = persons;
+        this.personService.getPersons()
+            .subscribe(function (result) {
+            _this.persons = result;
+        }, function (error) { return console.log(error); });
+    };
+    AppComponent.prototype.addNewPerson = function () {
+        var _this = this;
+        var p = new person_1.Person("worldff");
+        this.personService.addPerson(p).subscribe(function (data) {
+            console.log("add success");
+            _this.getPersons();
         });
     };
-    AppComponent.prototype.onClickMe = function () {
-        console.log("start");
-        var p = new person_1.Person("world");
-        p.Id = 1;
-        this.personService.updatePerson(p).subscribe(function (data) { return console.log(data); });
+    AppComponent.prototype.deletePerson = function (id) {
+        var _this = this;
+        this.personService.deletePerson(id).subscribe(function (data) {
+            console.log("delete success");
+            _this.getPersons();
+        });
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getPersons();
@@ -36,7 +44,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <button (click)=\"onClickMe()\">\u65B0\u589E\u90E8\u95E8</button>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n   \n    <button (click)=\"addNewPerson()\">addNewPerson</button>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n        <a href=\"javascript:void(0)\" (click)=\"deletePerson(p.Id)\">deletePerson</a>\n      </li>\n    </ul>\n  ",
             providers: [person_service_1.PersonService]
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService])

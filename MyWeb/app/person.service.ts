@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Person } from './person';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map'
@@ -11,22 +11,35 @@ import 'rxjs/add/operator/toPromise';
 export class PersonService {
     constructor(private http: Http) { }
 
-    getPersons(): Observable<Person> {
-        let url = 'api/Persons'; 
-        return this.http.get(url).map((res: Response) => res.json());
-    }
-
-    addPerson(item: Person) {
-        let url = 'api/Persons'; 
-        let body = JSON.stringify(item);   
-        var headers = new Headers({ 'Content-Type': 'json' });
-        this.http.post(url, body, { headers: headers });
-    }
-
-    updatePerson(item: Person) {
+    getPersons(){
         let url = 'api/Persons';
+        return this.http.get(url)
+            .map(responce => <Person[]>responce.json())
+            .catch(error => {
+                console.log(error);
+                return Observable.throw(error);
+            });
+    }
+
+    addPerson(item: Person): Observable<Response> {
+        let url = 'api/Person'; 
+        let body = JSON.stringify(item);   
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(url, body, options);
+    }
+
+    updatePerson(item: Person): Observable<Response> {
+        let url = 'api/Person';
         let body = JSON.stringify(item);
-        var headers = new Headers({ 'Content-Type': 'json' });
-        this.http.put(url, body, { headers: headers });
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.put(url, body, options);
+    }
+
+    deletePerson(id: string): Observable<Response> {
+        let url = 'api/Person?id='+id;
+        return this.http.delete(url);
     }
 }

@@ -22,21 +22,21 @@ namespace MyWeb.Controllers
         }
 
         [HttpPost]
-        [Route("Persons")]
+        [Route("Person")]
         public void Create(Person person)
         {
             _personService.Create(person);
         }
 
         [HttpPut]
-        [Route("Persons")]
+        [Route("Person")]
         public void Edit(Person person)
         {
             _personService.Edit(person);
         }
 
         [HttpDelete]
-        [Route("Persons")]
+        [Route("Person")]
         public void Delete(int id)
         {
             _personService.Delete(id);

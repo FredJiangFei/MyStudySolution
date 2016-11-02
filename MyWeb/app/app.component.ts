@@ -10,33 +10,43 @@ import 'rxjs/Rx';
     template: `
     <h1>{{title}}</h1>
     <h2>My Persons</h2>
-    <button (click)="onClickMe()">新增部门</button>
+   
+    <button (click)="addNewPerson()">addNewPerson</button>
     <ul class="heroes">
       <li *ngFor="let p of persons">
         <span class="badge">{{p.Id}}</span> {{p.Name}}
+        <a href="javascript:void(0)" (click)="deletePerson(p.Id)">deletePerson</a>
       </li>
     </ul>
-  `
-  , providers: [PersonService]
+  `,
+    providers: [PersonService]
 })
 
 export class AppComponent implements OnInit {
-    title = 'Tour of Person';
     persons:  Person[];
 
     constructor(private personService: PersonService) {}
 
     getPersons(): void {
-        this.personService.getPersons().subscribe((persons:Person[]) => {
-            this.persons = persons;
-            }); 
+        this.personService.getPersons()
+            .subscribe(result => {
+                this.persons = result;
+            }, error => console.log(error));
     }
 
-    clickMessage = '';
-    onClickMe() {
-        let p = new Person("world");
-        p.Id = 1;
-        this.personService.updatePerson(p); 
+    addNewPerson() {
+        let p = new Person("worldff");
+        this.personService.addPerson(p).subscribe(data => {
+            console.log("add success");
+            this.getPersons();
+        }); 
+    }
+
+    deletePerson(id:string) {
+        this.personService.deletePerson(id).subscribe(data => {
+            console.log("delete success");
+            this.getPersons();
+        });
     }
 
     ngOnInit(): void {
