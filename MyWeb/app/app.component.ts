@@ -20,14 +20,17 @@ import 'rxjs/Rx';
 })
 
 export class AppComponent implements OnInit {
-    title = 'Tour of Persons 123';
+    title = 'Tour of Persons';
     persons: Person[];
 
     constructor(private personService: PersonService) {}
 
     getPersons(): void {
-        this.personService.getPersons()
-            .subscribe(data => this.persons = data,error => console.log(error));
+        this.personService.getPersons().subscribe((persons:Person[]) => {
+            this.persons = persons;
+            }); 
+
+        //this.persons =  this.personService.getPersons();
     }
 
     ngOnInit(): void {

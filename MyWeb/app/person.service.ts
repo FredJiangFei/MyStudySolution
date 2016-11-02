@@ -11,10 +11,10 @@ import 'rxjs/add/operator/toPromise';
 export class PersonService {
     constructor(private http: Http) { }
 
-    getPersons(): Person[] {
+    getPersons(): Observable<Person> {
         let url = 'api/Persons'; 
-        return this.http.get(url)
-            .map((response: Response) => <Person>response.json());
+        return this.http.get(url).map((res: Response) => res.json());
+        //return this.http.get(url).map(responce => responce.json());
     }
 
     //private handleError(error: any): Promise<any> {

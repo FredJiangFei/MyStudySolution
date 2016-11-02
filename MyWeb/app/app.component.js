@@ -14,12 +14,14 @@ require('rxjs/Rx');
 var AppComponent = (function () {
     function AppComponent(personService) {
         this.personService = personService;
-        this.title = 'Tour of Persons 123';
+        this.title = 'Tour of Persons';
     }
     AppComponent.prototype.getPersons = function () {
         var _this = this;
-        this.personService.getPersons()
-            .subscribe(function (data) { return _this.persons = data; }, function (error) { return console.log(error); });
+        this.personService.getPersons().subscribe(function (persons) {
+            _this.persons = persons;
+        });
+        //this.persons =  this.personService.getPersons();
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getPersons();

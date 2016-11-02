@@ -19,8 +19,8 @@ var PersonService = (function () {
     }
     PersonService.prototype.getPersons = function () {
         var url = 'api/Persons';
-        return this.http.get(url)
-            .map(function (response) { return response.json(); });
+        return this.http.get(url).map(function (res) { return res.json(); });
+        //return this.http.get(url).map(responce => responce.json());
     };
     PersonService = __decorate([
         core_1.Injectable(), 
