@@ -9,24 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+var person_service_1 = require('./person.service');
 require('rxjs/Rx');
 var AppComponent = (function () {
-    //constructor(private personService: PersonService) {}
-    function AppComponent(http) {
-        this.http = http;
-        this.title = 'Tour of Persons 123 8';
-        this.url = 'api/Persons';
+    function AppComponent(personService) {
+        this.personService = personService;
+        this.title = 'Tour of Persons 123';
     }
     AppComponent.prototype.getPersons = function () {
         var _this = this;
-        //this.personService.getPersons().then(heroes => this.persons = heroes);
-        //this.persons = this.personService.getPersons();
-        this.http.get(this.url)
-            .map(function (response) { return response.json(); })
-            .subscribe(function (res) {
-            _this.persons = res;
-        }, function (err) { return console.log(err); }, function () { return console.log("Done"); });
+        this.personService.getPersons()
+            .subscribe(function (data) { return _this.persons = data; }, function (error) { return console.log(error); });
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getPersons();
@@ -34,9 +27,10 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  "
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  ",
+            providers: [person_service_1.PersonService]
         }), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [person_service_1.PersonService])
     ], AppComponent);
     return AppComponent;
 }());

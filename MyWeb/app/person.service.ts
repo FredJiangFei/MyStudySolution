@@ -3,22 +3,18 @@ import { Person } from './person';
 import { Http, Response } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
+import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 
 export class PersonService {
-    private url = 'api/Persons'; 
-
     constructor(private http: Http) { }
 
     getPersons(): Person[] {
-        return this.http.get(this.url)
-            .toPromise()
-            .then(response => response.json().data);
-
-        //return this.http.get(this.url)
-        //       .map(response => response.json());
+        let url = 'api/Persons'; 
+        return this.http.get(url)
+            .map((response: Response) => <Person>response.json());
     }
 
     //private handleError(error: any): Promise<any> {

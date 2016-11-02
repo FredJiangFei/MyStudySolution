@@ -16,28 +16,18 @@ import 'rxjs/Rx';
       </li>
     </ul>
   `
-  //, providers: [PersonService]
+  , providers: [PersonService]
 })
 
 export class AppComponent implements OnInit {
-    title = 'Tour of Persons 123 8';
+    title = 'Tour of Persons 123';
     persons: Person[];
-    private url = 'api/Persons'; 
 
-    //constructor(private personService: PersonService) {}
-    constructor(private http: Http) {}
+    constructor(private personService: PersonService) {}
 
     getPersons(): void {
-        //this.personService.getPersons().then(heroes => this.persons = heroes);
-        //this.persons = this.personService.getPersons();
-        this.http.get(this.url)
-            .map(response => response.json())
-            .subscribe((res) => {
-                this.persons = res;
-            },
-            (err) => console.log(err),
-            () => console.log("Done")
-        );
+        this.personService.getPersons()
+            .subscribe(data => this.persons = data,error => console.log(error));
     }
 
     ngOnInit(): void {

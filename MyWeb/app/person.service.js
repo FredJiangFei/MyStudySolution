@@ -11,18 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/Rx');
+require('rxjs/add/operator/map');
 require('rxjs/add/operator/toPromise');
 var PersonService = (function () {
     function PersonService(http) {
         this.http = http;
-        this.url = 'api/Persons';
     }
     PersonService.prototype.getPersons = function () {
-        return this.http.get(this.url)
-            .toPromise()
-            .then(function (response) { return response.json().data; });
-        //return this.http.get(this.url)
-        //       .map(response => response.json());
+        var url = 'api/Persons';
+        return this.http.get(url)
+            .map(function (response) { return response.json(); });
     };
     PersonService = __decorate([
         core_1.Injectable(), 
