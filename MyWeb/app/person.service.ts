@@ -22,7 +22,7 @@ export class PersonService {
       
         let url = 'api/Person'; 
         let body = JSON.stringify(item);   
-        //var headers = new Headers({ 'Content-Type': 'json' });
-        this.http.post(url, {"Name":"fff"});//, { headers: headers });
+        var headers = new Headers({ 'Content-Type': 'json' });
+        this.http.post(url, body, { headers: headers });
     }
 }

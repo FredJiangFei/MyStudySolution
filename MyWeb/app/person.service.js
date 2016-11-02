@@ -24,10 +24,10 @@ var PersonService = (function () {
     PersonService.prototype.addPerson = function (item) {
         console.log(item);
         console.log(item.Name);
-        var url = 'http://localhost:5784/api/Person';
+        var url = 'api/Person';
         var body = JSON.stringify(item);
-        //var headers = new Headers({ 'Content-Type': 'json' });
-        this.http.post(url, { "Name": "fff" }); //, { headers: headers });
+        var headers = new http_1.Headers({ 'Content-Type': 'json' });
+        this.http.post(url, body, { headers: headers });
     };
     PersonService = __decorate([
         core_1.Injectable(), 
