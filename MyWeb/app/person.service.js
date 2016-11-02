@@ -22,11 +22,11 @@ var PersonService = (function () {
         return this.http.get(url).map(function (res) { return res.json(); });
     };
     PersonService.prototype.addPerson = function (item) {
+        console.log(item);
+        console.log(item.Name);
         var url = 'api/Person';
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
-        this.http.post(url, item, { headers: headers });
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.http.post(url, JSON.stringify(item), { headers: headers });
     };
     PersonService = __decorate([
         core_1.Injectable(), 

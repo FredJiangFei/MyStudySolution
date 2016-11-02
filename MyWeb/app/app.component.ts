@@ -10,7 +10,7 @@ import 'rxjs/Rx';
     template: `
     <h1>{{title}}</h1>
     <h2>My Persons</h2>
-    <button type="button" class="btn btn-default" (click)="onAdd()">新增部门</button>
+    <button (click)="onClickMe()">新增部门</button>
     <ul class="heroes">
       <li *ngFor="let p of persons">
         <span class="badge">{{p.Id}}</span> {{p.Name}}
@@ -22,7 +22,7 @@ import 'rxjs/Rx';
 
 export class AppComponent implements OnInit {
     title = 'Tour of Person';
-    persons: Person[];
+    persons:  Person[];
 
     constructor(private personService: PersonService) {}
 
@@ -32,7 +32,9 @@ export class AppComponent implements OnInit {
             }); 
     }
 
-    onAdd(): void {
+    clickMessage = '';
+    onClickMe() {
+        console.log("start");
         let p = new Person("world");
         this.personService.addPerson(p); 
     }

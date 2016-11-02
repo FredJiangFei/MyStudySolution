@@ -230,6 +230,7 @@
   <ItemGroup>
     <Content Include="Angular\controller\person-controller.js" />
     <TypeScriptCompile Include="app\app-routing.module.ts" />
+    <TypeScriptCompile Include="app\click-me.component.ts" />
     <TypeScriptCompile Include="app\contact\awesome.pipe.ts" />
     <TypeScriptCompile Include="app\contact\contact-routing.module.ts" />
     <TypeScriptCompile Include="app\contact\contact.module.ts" />

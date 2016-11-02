@@ -16,6 +16,7 @@ var AppComponent = (function () {
     function AppComponent(personService) {
         this.personService = personService;
         this.title = 'Tour of Person';
+        this.clickMessage = '';
     }
     AppComponent.prototype.getPersons = function () {
         var _this = this;
@@ -23,7 +24,8 @@ var AppComponent = (function () {
             _this.persons = persons;
         });
     };
-    AppComponent.prototype.onAdd = function () {
+    AppComponent.prototype.onClickMe = function () {
+        console.log("start");
         var p = new person_1.Person("world");
         this.personService.addPerson(p);
     };
@@ -33,7 +35,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"onAdd()\">\u65B0\u589E\u90E8\u95E8</button>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <button (click)=\"onClickMe()\">\u65B0\u589E\u90E8\u95E8</button>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  ",
             providers: [person_service_1.PersonService]
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService])

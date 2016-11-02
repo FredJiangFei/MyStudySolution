@@ -17,11 +17,11 @@ export class PersonService {
     }
 
     addPerson(item: Person) {
-        let url = 'api/Person'; 
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
+        console.log(item);
+        console.log(item.Name);
 
-        this.http.post(url, item, { headers: headers });
+        let url = 'api/Person'; 
+        var headers = new Headers({ 'Content-Type': 'application/json' });
+        this.http.post(url, JSON.stringify(item), { headers: headers });
     }
 }
