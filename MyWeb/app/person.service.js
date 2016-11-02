@@ -10,25 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-//import { Observable }     from 'rxjs/Observable';
-var HEROES = [
-    { id: 11, name: 'Mr. Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 20, name: 'Tornado' }
-];
+require('rxjs/Rx');
+require('rxjs/add/operator/toPromise');
 var PersonService = (function () {
     function PersonService(http) {
         this.http = http;
-        this.heroesUrl = 'api/Persons';
+        this.url = 'api/Persons';
     }
-    PersonService.prototype.getHeroes = function () {
-        return HEROES;
+    PersonService.prototype.getPersons = function () {
+        return this.http.get(this.url)
+            .toPromise()
+            .then(function (response) { return response.json().data; });
+        //return this.http.get(this.url)
+        //       .map(response => response.json());
     };
     PersonService = __decorate([
         core_1.Injectable(), 

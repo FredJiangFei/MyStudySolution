@@ -9,30 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_service_1 = require('./person.service');
-//import './rxjs-operators';
+var http_1 = require('@angular/http');
+require('rxjs/Rx');
 var AppComponent = (function () {
-    function AppComponent(personService) {
-        this.personService = personService;
-        this.title = 'Tour of Heroes';
+    //constructor(private personService: PersonService) {}
+    function AppComponent(http) {
+        this.http = http;
+        this.title = 'Tour of Persons 123 8';
+        this.url = 'api/Persons';
     }
-    AppComponent.prototype.getHeroes = function () {
-        //this.personService.getHeroes()
-        //    .subscribe(
-        //    heroes => this.heroes = heroes,
-        //    error => this.errorMessage = <any>error);
-        this.heroes = this.personService.getHeroes();
+    AppComponent.prototype.getPersons = function () {
+        var _this = this;
+        //this.personService.getPersons().then(heroes => this.persons = heroes);
+        //this.persons = this.personService.getPersons();
+        this.http.get(this.url)
+            .map(function (response) { return response.json(); })
+            .subscribe(function (res) {
+            _this.persons = res;
+        }, function (err) { return console.log(err); }, function () { return console.log("Done"); });
     };
     AppComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
+        this.getPersons();
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let hero of heroes\">\n        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n      </li>\n    </ul>\n  ",
-            providers: [person_service_1.PersonService]
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  "
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService])
+        __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);
     return AppComponent;
 }());

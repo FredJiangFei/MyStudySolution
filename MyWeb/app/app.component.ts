@@ -1,38 +1,46 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Person } from './person';
 import { PersonService } from './person.service';
-//import './rxjs-operators';
-
+import { Http, Response } from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 @Component({
     selector: 'my-app',
     template: `
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
+    <h2>My Persons</h2>
     <ul class="heroes">
-      <li *ngFor="let hero of heroes">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <li *ngFor="let p of persons">
+        <span class="badge">{{p.Id}}</span> {{p.Name}}
       </li>
     </ul>
-  `,
-    providers: [PersonService]
+  `
+  //, providers: [PersonService]
 })
 
 export class AppComponent implements OnInit {
-    title = 'Tour of Heroes';
-    heroes: Person[];
-    constructor(private personService: PersonService) { }
+    title = 'Tour of Persons 123 8';
+    persons: Person[];
+    private url = 'api/Persons'; 
 
-    getHeroes(): void {
-        //this.personService.getHeroes()
-        //    .subscribe(
-        //    heroes => this.heroes = heroes,
-        //    error => this.errorMessage = <any>error);
+    //constructor(private personService: PersonService) {}
+    constructor(private http: Http) {}
 
-        this.heroes = this.personService.getHeroes();
+    getPersons(): void {
+        //this.personService.getPersons().then(heroes => this.persons = heroes);
+        //this.persons = this.personService.getPersons();
+        this.http.get(this.url)
+            .map(response => response.json())
+            .subscribe((res) => {
+                this.persons = res;
+            },
+            (err) => console.log(err),
+            () => console.log("Done")
+        );
     }
 
     ngOnInit(): void {
-        this.getHeroes();
+        this.getPersons();
     }
 }

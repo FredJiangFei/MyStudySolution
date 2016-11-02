@@ -1,35 +1,29 @@
 ﻿import { Injectable } from '@angular/core';
 import { Person } from './person';
 import { Http, Response } from '@angular/http';
-//import { Observable }     from 'rxjs/Observable';
-
-const HEROES: Person[] = [
-    { id: 11, name: 'Mr. Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 20, name: 'Tornado' }
-];
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 
 export class PersonService {
-    private heroesUrl = 'api/Persons'; 
+    private url = 'api/Persons'; 
 
     constructor(private http: Http) { }
 
-    getHeroes(): Person[] {
-        return HEROES;
+    getPersons(): Person[] {
+        return this.http.get(this.url)
+            .toPromise()
+            .then(response => response.json().data);
+
+        //return this.http.get(this.url)
+        //       .map(response => response.json());
     }
 
-    //getHeroes(): Observable<Person[]> {
-    //    return this.http.get(this.heroesUrl)
-    //        .map(this.extractData)
-    //        .catch(this.handleError);
+    //private handleError(error: any): Promise<any> {
+    //    console.error('An error occurred', error); // for demo purposes only
+    //    return Promise.reject(error.message || error);
     //}
 
     //private extractData(res: Response) {
