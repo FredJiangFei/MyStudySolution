@@ -25,23 +25,16 @@ namespace MyWeb.Controllers
 
         [HttpPost]
         [Route("Person")]
-        public string Create(Person person)
+        public void Create(Person person)
         {
-            return "123";
+            _personService.Create(person);
         }
 
-        [HttpPost]
-        [Route("TestWebChat")]
-        public string TestWebChat()
-        {
-            return "TestWebChat Success";
-        } 
-        
         [HttpPut]
         [Route("Person")]
         public void Edit(Person person)
         {
-            _personService.Create(person);
+            _personService.Edit(person);
         }
 
         [HttpGet]

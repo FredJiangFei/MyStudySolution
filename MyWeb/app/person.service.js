@@ -20,7 +20,13 @@ var PersonService = (function () {
     PersonService.prototype.getPersons = function () {
         var url = 'api/Persons';
         return this.http.get(url).map(function (res) { return res.json(); });
-        //return this.http.get(url).map(responce => responce.json());
+    };
+    PersonService.prototype.addPerson = function (item) {
+        var url = 'api/Person';
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+        this.http.post(url, item, { headers: headers });
     };
     PersonService = __decorate([
         core_1.Injectable(), 

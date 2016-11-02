@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var person_1 = require('./person');
 var person_service_1 = require('./person.service');
 require('rxjs/Rx');
 var AppComponent = (function () {
     function AppComponent(personService) {
         this.personService = personService;
-        this.title = 'Tour of Persons';
+        this.title = 'Tour of Person';
     }
     AppComponent.prototype.getPersons = function () {
         var _this = this;
         this.personService.getPersons().subscribe(function (persons) {
             _this.persons = persons;
         });
-        //this.persons =  this.personService.getPersons();
+    };
+    AppComponent.prototype.onAdd = function () {
+        var p = new person_1.Person("world");
+        this.personService.addPerson(p);
     };
     AppComponent.prototype.ngOnInit = function () {
         this.getPersons();
@@ -29,7 +33,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"onAdd()\">\u65B0\u589E\u90E8\u95E8</button>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n      </li>\n    </ul>\n  ",
             providers: [person_service_1.PersonService]
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService])

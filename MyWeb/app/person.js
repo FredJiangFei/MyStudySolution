@@ -1,6 +1,7 @@
 "use strict";
 var Person = (function () {
-    function Person() {
+    function Person(name) {
+        this.Name = name;
     }
     return Person;
 }());
