@@ -10,9 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var contact_service_1 = require('./contact.service');
-var person_service_1 = require('../person.service');
 var ContactComponent = (function () {
-    function ContactComponent(contactService, userService) {
+    function ContactComponent(contactService) {
         this.contactService = contactService;
         this.msg = 'Loading contacts ...';
         this.userName = '';
@@ -55,7 +54,7 @@ var ContactComponent = (function () {
             templateUrl: 'contact.component.html',
             styleUrls: ['contact.component.css']
         }), 
-        __metadata('design:paramtypes', [contact_service_1.ContactService, person_service_1.PersonService])
+        __metadata('design:paramtypes', [contact_service_1.ContactService])
     ], ContactComponent);
     return ContactComponent;
 }());

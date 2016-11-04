@@ -1,6 +1,5 @@
 ﻿import { Component, OnInit }      from '@angular/core';
 import { Contact, ContactService } from './contact.service';
-import {PersonService }    from '../person.service';
 @Component({
     moduleId: module.id,
     selector: 'app-contact',
@@ -12,7 +11,7 @@ export class ContactComponent implements OnInit {
     contacts: Contact[];
     msg = 'Loading contacts ...';
     userName = '';
-    constructor(private contactService: ContactService, userService: PersonService) {
+    constructor(private contactService: ContactService) {
         this.userName = "123";//userService.userName;
     }
     ngOnInit() {

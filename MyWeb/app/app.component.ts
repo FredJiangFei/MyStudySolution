@@ -1,55 +1,12 @@
-﻿import { Component, OnInit } from '@angular/core';
-import { Person } from './person';
-import { PersonService } from './person.service';
+﻿import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/Rx';
 
 @Component({
     selector: 'my-app',
-    template: `
-    <h1>{{title}}</h1>
-    <h2>My Persons</h2>
-   
-    <button (click)="addNewPerson()">addNewPerson</button>
-    <ul class="heroes">
-      <li *ngFor="let p of persons">
-        <span class="badge">{{p.Id}}</span> {{p.Name}}
-        <a href="javascript:void(0)" (click)="deletePerson(p.Id)">deletePerson</a>
-      </li>
-    </ul>
-  `,
-    providers: [PersonService]
+    template: `<person-app></person-app>`,
+    //template: `<h1>ddddd</h1>`,
 })
 
-export class AppComponent implements OnInit {
-    persons:  Person[];
-
-    constructor(private personService: PersonService) {}
-
-    getPersons(): void {
-        this.personService.getPersons()
-            .subscribe(result => {
-                this.persons = result;
-            }, error => console.log(error));
-    }
-
-    addNewPerson() {
-        let p = new Person("worldff");
-        this.personService.addPerson(p).subscribe(data => {
-            console.log("add success");
-            this.getPersons();
-        }); 
-    }
-
-    deletePerson(id:string) {
-        this.personService.deletePerson(id).subscribe(data => {
-            console.log("delete success");
-            this.getPersons();
-        });
-    }
-
-    ngOnInit(): void {
-        this.getPersons();
-    }
+export class AppComponent {
+   
 }
