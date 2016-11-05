@@ -8,7 +8,17 @@
 
     <div class="row">
         <!-- Standard button -->
-        <button type="button" class="btn btn-primary pull-right" (click)="addNewPerson()">Create</button>
+        <div class="pull-right">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label for="personName" class="sr-only">Password</label>
+                    <input class="form-control" id="personName" #newPerson 
+                           (keyup.enter)="addNewPerson(newPerson.value)"
+                           placeholder="Enter name" />
+                </div>
+                <button type="button" class="btn btn-primary" (click)="addNewPerson(newPerson.value)">Create</button>
+            </form>
+        </div>
     </div>
     <div class="row">
         <table class="table">

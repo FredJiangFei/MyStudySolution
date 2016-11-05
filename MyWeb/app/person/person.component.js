@@ -18,23 +18,20 @@ var PersonComponent = (function () {
     }
     PersonComponent.prototype.getPersons = function () {
         var _this = this;
-        this.personService.getPersons()
-            .subscribe(function (result) {
+        this.personService.getPersons().subscribe(function (result) {
             _this.persons = result;
         }, function (error) { return console.log(error); });
     };
-    PersonComponent.prototype.addNewPerson = function () {
+    PersonComponent.prototype.addNewPerson = function (name) {
         var _this = this;
-        var p = new person_1.Person("worldff");
+        var p = new person_1.Person(name);
         this.personService.addPerson(p).subscribe(function (data) {
-            console.log("add success");
             _this.getPersons();
         });
     };
     PersonComponent.prototype.deletePerson = function (id) {
         var _this = this;
         this.personService.deletePerson(id).subscribe(function (data) {
-            console.log("delete success");
             _this.getPersons();
         });
     };

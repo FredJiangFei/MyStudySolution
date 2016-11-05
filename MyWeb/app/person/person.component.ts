@@ -14,28 +14,25 @@ import 'rxjs/Rx';
 })
 
 export class PersonComponent implements OnInit {
-    persons:  Person[];
+    persons: Person[];
 
     constructor(private personService: PersonService) {}
 
     getPersons(): void {
-        this.personService.getPersons()
-            .subscribe(result => {
+        this.personService.getPersons().subscribe(result => {
                 this.persons = result;
             }, error => console.log(error));
     }
 
-    addNewPerson() {
-        let p = new Person("worldff");
+    addNewPerson(name:string) {
+        let p = new Person(name);
         this.personService.addPerson(p).subscribe(data => {
-            console.log("add success");
             this.getPersons();
         }); 
     }
 
     deletePerson(id:string) {
         this.personService.deletePerson(id).subscribe(data => {
-            console.log("delete success");
             this.getPersons();
         });
     }
