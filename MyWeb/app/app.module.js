@@ -13,7 +13,6 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 /* App Root */
 var app_component_1 = require('./app.component');
-//import { PersonService }   from './person.service';
 /* Person Imports */
 var person_module_1 = require('./person/person.module');
 var AppModule = (function () {

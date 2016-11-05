@@ -43,11 +43,10 @@ var PersonComponent = (function () {
     };
     PersonComponent = __decorate([
         core_1.Component({
-            //moduleId: module.id,
+            moduleId: module.id,
             selector: 'person-app',
-            //templateUrl:'person.component.html',
+            templateUrl: 'person.component.html',
             //styleUrls: ['person.component.css'],
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Persons</h2>\n   \n    <button (click)=\"addNewPerson()\">addNewPerson</button>\n    <ul class=\"heroes\">\n      <li *ngFor=\"let p of persons\">\n        <span class=\"badge\">{{p.Id}}</span> {{p.Name}}\n        <a href=\"javascript:void(0)\" (click)=\"deletePerson(p.Id)\">deletePerson</a>\n      </li>\n    </ul>\n  ",
             providers: [person_service_1.PersonService]
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService])

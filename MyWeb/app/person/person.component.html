@@ -1,10 +1,35 @@
-﻿<h1>{{title}}</h1>
-<h2>My Persons</h2>
+﻿
 
-<button (click)="addNewPerson()">addNewPerson</button>
-<ul class="heroes">
-    <li *ngFor="let p of persons">
-        <span class="badge">{{p.Id}}</span> {{p.Name}}
-        <a href="javascript:void(0)" (click)="deletePerson(p.Id)">deletePerson</a>
-    </li>
-</ul>
+
+<div class="container">
+    <div class="row">
+        <h1>My Persons</h1>
+    </div>
+
+    <div class="row">
+        <!-- Standard button -->
+        <button type="button" class="btn btn-primary pull-right" (click)="addNewPerson()">Create</button>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of persons">
+                    <td>{{p.Id}}</td>
+                    <td>{{p.Name}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger pull-right" (click)="deletePerson(p.Id)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

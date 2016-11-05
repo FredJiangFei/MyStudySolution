@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+//import { BrowserModule } from '@angular/platform-browser';
 var forms_1 = require('@angular/forms');
 var person_component_1 = require('./person.component');
 var person_service_1 = require('./person.service');
