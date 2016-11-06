@@ -9,12 +9,25 @@ import 'rxjs/Rx';
     moduleId: module.id, // ??
     selector: 'person-app',
     templateUrl:'person.component.html',
-    //styleUrls: ['person.component.css'],
+    styleUrls: ['person.component.css'],
     providers: [PersonService]
 })
 
 export class PersonComponent implements OnInit {
     persons: Person[];
+    notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+    person = new Person('Dr IQ', this.notes[0]);
+    active = true;
+    submitted = true;
+
+    onSubmit() {
+        this.addNewPerson();
+        this.submitted = true;
+    }
+
+    showAddForm() {
+        this.submitted = false;
+    }
 
     constructor(private personService: PersonService) {}
 
@@ -24,9 +37,12 @@ export class PersonComponent implements OnInit {
             }, error => console.log(error));
     }
 
-    addNewPerson(name:string) {
-        let p = new Person(name);
-        this.personService.addPerson(p).subscribe(data => {
+
+    addNewPerson() {
+        this.personService.addPerson(this.person).subscribe(data => {
+            this.person = new Person(' ', ' ');
+            this.active = false;
+            setTimeout(() => this.active = true, 0);
             this.getPersons();
         }); 
     }
