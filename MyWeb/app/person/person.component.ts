@@ -18,15 +18,24 @@ export class PersonComponent implements OnInit {
     notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
     person = new Person('Dr IQ', this.notes[0]);
     active = true;
-    submitted = true;
+    hideForm = true;
 
     onSubmit() {
-        this.addNewPerson();
-        this.submitted = true;
+        if (this.person.Id) {
+            this.editPerson();
+        } else {
+            this.addNewPerson();
+        }
+        this.hideForm = true;
     }
 
     showAddForm() {
-        this.submitted = false;
+        this.hideForm = false;
+    }
+
+    showEditForm(p: Person) {
+        this.person = p;
+        this.hideForm = false;
     }
 
     constructor(private personService: PersonService) {}
@@ -37,9 +46,17 @@ export class PersonComponent implements OnInit {
             }, error => console.log(error));
     }
 
-
     addNewPerson() {
         this.personService.addPerson(this.person).subscribe(data => {
+            this.person = new Person(' ', ' ');
+            this.active = false;
+            setTimeout(() => this.active = true, 0);
+            this.getPersons();
+        }); 
+    }
+
+    editPerson() {
+        this.personService.updatePerson(this.person).subscribe(data => {
             this.person = new Person(' ', ' ');
             this.active = false;
             setTimeout(() => this.active = true, 0);

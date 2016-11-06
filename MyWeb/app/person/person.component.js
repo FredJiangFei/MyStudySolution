@@ -18,14 +18,23 @@ var PersonComponent = (function () {
         this.notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
         this.person = new person_1.Person('Dr IQ', this.notes[0]);
         this.active = true;
-        this.submitted = true;
+        this.hideForm = true;
     }
     PersonComponent.prototype.onSubmit = function () {
-        this.addNewPerson();
-        this.submitted = true;
+        if (this.person.Id) {
+            this.editPerson();
+        }
+        else {
+            this.addNewPerson();
+        }
+        this.hideForm = true;
     };
     PersonComponent.prototype.showAddForm = function () {
-        this.submitted = false;
+        this.hideForm = false;
+    };
+    PersonComponent.prototype.showEditForm = function (p) {
+        this.person = p;
+        this.hideForm = false;
     };
     PersonComponent.prototype.getPersons = function () {
         var _this = this;
@@ -36,6 +45,15 @@ var PersonComponent = (function () {
     PersonComponent.prototype.addNewPerson = function () {
         var _this = this;
         this.personService.addPerson(this.person).subscribe(function (data) {
+            _this.person = new person_1.Person(' ', ' ');
+            _this.active = false;
+            setTimeout(function () { return _this.active = true; }, 0);
+            _this.getPersons();
+        });
+    };
+    PersonComponent.prototype.editPerson = function () {
+        var _this = this;
+        this.personService.updatePerson(this.person).subscribe(function (data) {
             _this.person = new person_1.Person(' ', ' ');
             _this.active = false;
             setTimeout(function () { return _this.active = true; }, 0);

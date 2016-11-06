@@ -16,7 +16,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Notes</th>
-                <th></th>
+                <th style="width: 120px;"></th>
             </tr>
             </thead>
             <tbody>
@@ -25,7 +25,10 @@
                 <td>{{p.Name}}</td>
                  <td>{{p.Notes}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger pull-right" (click)="deletePerson(p.Id)">
+                    <button type="button" class="btn btn-primary" (click)="showEditForm(p)">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger" (click)="deletePerson(p.Id)">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
                 </td>
@@ -34,7 +37,7 @@
         </table>
     </div>
 
-    <div class="row" [hidden]="submitted">
+    <div class="row" [hidden]="hideForm">
         <h1>Person Form</h1>
         <form *ngIf="active" (ngSubmit)="onSubmit()" #personForm="ngForm">
             <div class="form-group">
