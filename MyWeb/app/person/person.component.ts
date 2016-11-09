@@ -9,16 +9,17 @@ import 'rxjs/Rx';
     moduleId: module.id, // ??
     selector: 'person-app',
     templateUrl:'person.component.html',
-    styleUrls: ['person.component.css'],
-    providers: [PersonService]
+    styleUrls: ['person.component.css']
+    //providers: [PersonService]
 })
 
 export class PersonComponent implements OnInit {
     persons: Person[];
     notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
-    person = new Person('Dr IQ', this.notes[0]);
+    person: Person;
     active = true;
-    hideForm = true;
+
+    constructor(private personService: PersonService) { }
 
     onSubmit() {
         if (this.person.Id) {
@@ -26,19 +27,15 @@ export class PersonComponent implements OnInit {
         } else {
             this.addNewPerson();
         }
-        this.hideForm = true;
     }
 
     showAddForm() {
-        this.hideForm = false;
+        this.person = new Person('Dr IQ', this.notes[0]);
     }
 
     showEditForm(p: Person) {
         this.person = p;
-        this.hideForm = false;
     }
-
-    constructor(private personService: PersonService) {}
 
     getPersons(): void {
         this.personService.getPersons().subscribe(result => {
@@ -48,7 +45,7 @@ export class PersonComponent implements OnInit {
 
     addNewPerson() {
         this.personService.addPerson(this.person).subscribe(data => {
-            this.person = new Person(' ', ' ');
+            this.person = undefined;
             this.active = false;
             setTimeout(() => this.active = true, 0);
             this.getPersons();
@@ -57,7 +54,7 @@ export class PersonComponent implements OnInit {
 
     editPerson() {
         this.personService.updatePerson(this.person).subscribe(data => {
-            this.person = new Person(' ', ' ');
+            this.person = undefined;
             this.active = false;
             setTimeout(() => this.active = true, 0);
             this.getPersons();

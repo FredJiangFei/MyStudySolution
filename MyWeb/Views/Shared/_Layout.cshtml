@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <base href="/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @*<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/themes/redmond/jquery-ui.css" />
@@ -26,7 +27,7 @@
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-        System.import('app').catch(function (err) { console.error(err); });
+        System.import('app').catch(function(err) { console.error(err); });
     </script>
 </head>
 <body>

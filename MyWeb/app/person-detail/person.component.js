@@ -70,11 +70,13 @@ var PersonComponent = (function () {
             moduleId: module.id,
             selector: 'person-app',
             templateUrl: 'person.component.html',
-            styleUrls: ['person.component.css']
+            styleUrls: ['person.component.css'],
+            providers: [person_service_1.PersonService]
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService])
+        __metadata('design:paramtypes', [(typeof (_a = typeof person_service_1.PersonService !== 'undefined' && person_service_1.PersonService) === 'function' && _a) || Object])
     ], PersonComponent);
     return PersonComponent;
+    var _a;
 }());
 exports.PersonComponent = PersonComponent;
 //# sourceMappingURL=person.component.js.map

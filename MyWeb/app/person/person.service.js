@@ -27,6 +27,10 @@ var PersonService = (function () {
             return Observable_1.Observable.throw(error);
         });
     };
+    PersonService.prototype.getPerson = function (id) {
+        return this.getPersons()
+            .then(function (persons) { return persons.find(function (p) { return p.Id === id; }); });
+    };
     PersonService.prototype.addPerson = function (item) {
         var url = 'api/Person';
         var body = JSON.stringify(item);

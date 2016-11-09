@@ -21,6 +21,11 @@ export class PersonService {
             });
     }
 
+    getPerson(id: number): Promise<Person> {
+        return this.getPersons()
+            .then(persons => persons.find(p => p.Id === id));
+    }
+
     addPerson(item: Person): Observable<Response> {
         let url = 'api/Person'; 
         let body = JSON.stringify(item);   
