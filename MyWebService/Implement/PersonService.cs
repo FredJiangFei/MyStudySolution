@@ -39,6 +39,11 @@ namespace MyWebService.Implement
             return _personRepository.GetAll().ToList();
         }
 
+        public Person GetPeopleById(int personId)
+        {
+            return _personRepository.Get(personId);
+        }
+
         [UnitOfWork]
         public void Delete(int personId)
         {

@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Person } from './person';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
@@ -21,9 +21,14 @@ export class PersonService {
             });
     }
 
-    getPerson(id: number): Promise<Person> {
-        return this.getPersons()
-            .then(persons => persons.find(p => p.Id === id));
+    getPerson(id: number) {
+        let url = 'api/Person?id='+id;
+        return this.http.get(url)
+            .map(responce => <Person>responce.json())
+            .catch(error => {
+                console.log(error);
+                return Observable.throw(error);
+            });
     }
 
     addPerson(item: Person): Observable<Response> {

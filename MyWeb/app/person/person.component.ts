@@ -1,8 +1,6 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Person } from './person';
 import { PersonService } from './person.service';
-import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 @Component({

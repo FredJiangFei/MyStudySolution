@@ -1,4 +1,4 @@
-﻿export class Person {
+export class Person {
     Id: number;
     Name: string;
     Notes: string;

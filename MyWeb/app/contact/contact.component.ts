@@ -1,4 +1,4 @@
-﻿import { Component, OnInit }      from '@angular/core';
+import { Component, OnInit }      from '@angular/core';
 import { Contact, ContactService } from './contact.service';
 @Component({
     moduleId: module.id,

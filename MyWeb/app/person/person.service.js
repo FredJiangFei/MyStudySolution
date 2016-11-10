@@ -28,8 +28,13 @@ var PersonService = (function () {
         });
     };
     PersonService.prototype.getPerson = function (id) {
-        return this.getPersons()
-            .then(function (persons) { return persons.find(function (p) { return p.Id === id; }); });
+        var url = 'api/Person?id=' + id;
+        return this.http.get(url)
+            .map(function (responce) { return responce.json(); })
+            .catch(function (error) {
+            console.log(error);
+            return Observable_1.Observable.throw(error);
+        });
     };
     PersonService.prototype.addPerson = function (item) {
         var url = 'api/Person';

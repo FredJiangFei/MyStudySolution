@@ -19,6 +19,14 @@ namespace MyWeb.Controllers
         public Person[] GetPesrons()
         {
             return _personService.GetPeopleList().ToArray();
+        } 
+        
+        
+        [HttpGet]
+        [Route("Person")]
+        public Person GetPesronById(int id)
+        {
+            return _personService.GetPeopleById(id);
         }
 
         [HttpPost]

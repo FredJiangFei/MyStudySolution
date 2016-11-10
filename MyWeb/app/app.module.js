@@ -16,7 +16,7 @@ var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
 var person_component_1 = require('./person/person.component');
 var dashboard_component_1 = require('./dashboard.component');
-var person_detail_component_1 = require('./person-detail/person-detail.component');
+//import { PersonDetailComponent }   from './person-detail/person-detail.component';
 /* Person Imports */
 var person_module_1 = require('./person/person.module');
 var AppModule = (function () {
@@ -37,12 +37,9 @@ var AppModule = (function () {
                     }, {
                         path: 'dashboard',
                         component: dashboard_component_1.DashboardComponent
-                    }, {
-                        path: 'detail/:id',
-                        component: person_detail_component_1.PersonDetailComponent
                     }
                 ])],
-            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, person_detail_component_1.PersonDetailComponent],
+            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

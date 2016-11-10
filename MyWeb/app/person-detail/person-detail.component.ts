@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Person } from '../person/person';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
@@ -28,7 +28,9 @@ export class PersonDetailComponent implements OnInit{
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
 
-            this.personService.getPerson(id).then(p => this.person = p);
+            this.personService.getPerson(id).subscribe(result => {
+                this.person = result;
+            }, error => console.log(error));
         });
     }
 }

@@ -7,6 +7,8 @@ namespace MyWebService.Interface
     {
         List<Person> GetPeopleList();
 
+        Person GetPeopleById(int personId);
+
         void Create(Person person);
 
         void Edit(Person person);

@@ -26,7 +26,9 @@ var PersonDetailComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
-            _this.personService.getPerson(id).then(function (p) { return _this.person = p; });
+            _this.personService.getPerson(id).subscribe(function (result) {
+                _this.person = result;
+            }, function (error) { return console.log(error); });
         });
     };
     __decorate([

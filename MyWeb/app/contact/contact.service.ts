@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 export class Contact {
     constructor(public id: number, public name: string) { }
 }
