@@ -275,11 +275,12 @@
     <Content Include="Views\Shared\_MVCAjax.cshtml" />
     <Content Include="systemjs.config.js" />
     <TypeScriptCompile Include="app\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\directive\highlight.directive.ts" />
     <TypeScriptCompile Include="app\person\person.module.ts" />
     <TypeScriptCompile Include="app\person\person.component.ts" />
-    <TypeScriptCompile Include="app\person\person.service.ts" />
     <TypeScriptCompile Include="app\person\person.ts" />
     <TypeScriptCompile Include="app\person-detail\person-detail.component.ts" />
+    <TypeScriptCompile Include="app\service\person.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
