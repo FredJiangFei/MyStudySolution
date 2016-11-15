@@ -13,13 +13,23 @@ var common_1 = require('@angular/common');
 //import { BrowserModule } from '@angular/platform-browser';
 var forms_1 = require('@angular/forms');
 var person_component_1 = require('./person.component');
-var person_service_1 = require('./person.service');
+var person_service_1 = require('../service/person.service');
+var router_1 = require('@angular/router');
+var dashboard_component_1 = require('../dashboard.component');
 var PersonModule = (function () {
     function PersonModule() {
     }
     PersonModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, forms_1.FormsModule],
+            imports: [common_1.CommonModule, forms_1.FormsModule, router_1.RouterModule.forRoot([
+                    {
+                        path: 'persons',
+                        component: person_component_1.PersonComponent
+                    }, {
+                        path: 'dashboard',
+                        component: dashboard_component_1.DashboardComponent
+                    }
+                ])],
             declarations: [person_component_1.PersonComponent],
             exports: [person_component_1.PersonComponent],
             providers: [person_service_1.PersonService]

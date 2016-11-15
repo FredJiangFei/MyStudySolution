@@ -1,12 +1,11 @@
 <div class="container">
     <div class="row">
-        <h1>{{title}}</h1>
+        <h1 highlight>{{title}}</h1>
     </div>
   <div class="row">
     <nav>
         <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
         <a routerLink="/persons" routerLinkActive="active">Person</a>
-        <a [routerLink]="['/detail', 1]">tt</a>
     </nav>
    </div>
     <router-outlet></router-outlet>

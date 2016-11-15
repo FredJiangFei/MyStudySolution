@@ -3,7 +3,7 @@ import { CommonModule }       from '@angular/common';
 //import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }        from '@angular/forms';
 import { PersonComponent }   from './person.component';
-import { PersonService }     from './person.service';
+import { PersonService }     from '../service/person.service';
 import { RouterModule }   from '@angular/router';
 import { DashboardComponent }   from '../dashboard.component';
 

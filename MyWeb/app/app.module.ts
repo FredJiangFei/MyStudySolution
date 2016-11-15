@@ -2,36 +2,23 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import { RouterModule }   from '@angular/router';
+import { FormsModule }        from '@angular/forms';
 
 /* App Root */
 import { AppComponent }   from './app.component';
-import { PersonComponent }   from './person/person.component';
 import { DashboardComponent }   from './dashboard.component';
 import { PersonDetailComponent }   from './person-detail/person-detail.component';
 
 /* Person Imports */
 import { PersonModule }   from './person/person.module';
+import { AppRoutingModule }     from './app-routing.module';
+
+/* Directive */
+import { HighlightDirective }  from './directive/highlight.directive';
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, PersonModule,
-                RouterModule.forRoot([
-                    {
-                        path: '',
-                        redirectTo: '/dashboard',
-                        pathMatch: 'full'
-                    },
-                    {
-                        path: 'persons',
-                        component: PersonComponent
-                    }, {
-                        path: 'dashboard',
-                        component: DashboardComponent
-                    },{
-                        path: 'detail/:id',
-                        component: PersonDetailComponent
-                    }
-                ])],
-    declarations: [AppComponent, DashboardComponent, PersonDetailComponent],
+    imports: [BrowserModule, HttpModule, PersonModule,FormsModule,AppRoutingModule],
+    declarations: [AppComponent, DashboardComponent,PersonDetailComponent,HighlightDirective],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
