@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var person_1 = require('./person');
-var person_service_1 = require('../service/person.service');
+var person_service_1 = require('.././service/person.service');
 require('rxjs/Rx');
 var PersonComponent = (function () {
     function PersonComponent(personService) {
@@ -72,9 +72,10 @@ var PersonComponent = (function () {
             templateUrl: 'person.component.html',
             styleUrls: ['person.component.css']
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService])
+        __metadata('design:paramtypes', [(typeof (_a = typeof person_service_1.PersonService !== 'undefined' && person_service_1.PersonService) === 'function' && _a) || Object])
     ], PersonComponent);
     return PersonComponent;
+    var _a;
 }());
 exports.PersonComponent = PersonComponent;
 //# sourceMappingURL=person.component.js.map

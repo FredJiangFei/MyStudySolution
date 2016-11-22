@@ -229,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\controller\person-controller.js" />
+    <TypeScriptCompile Include="app\app-routing.module.ts" />
     <TypeScriptCompile Include="app\contact\awesome.pipe.ts" />
     <TypeScriptCompile Include="app\contact\contact-routing.module.ts" />
     <TypeScriptCompile Include="app\contact\contact.module.ts" />
@@ -236,9 +237,9 @@
     <Content Include="app\contact\contact.component.css" />
     <Content Include="app\contact\contact.component.html" />
     <Content Include="app\app.component.html" />
-    <Content Include="app\person\person.component.css" />
-    <Content Include="app\person\person.component.html" />
-    <Content Include="app\person-detail\person-detail.component.html" />
+    <Content Include="app\component\person\person.component.css" />
+    <Content Include="app\component\person\person.component.html" />
+    <Content Include="app\component\person-detail\person-detail.component.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
@@ -274,12 +275,12 @@
     <Content Include="Scripts\errors.json" />
     <Content Include="Views\Shared\_MVCAjax.cshtml" />
     <Content Include="systemjs.config.js" />
-    <TypeScriptCompile Include="app\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\component\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="app\directive\highlight.directive.ts" />
-    <TypeScriptCompile Include="app\person\person.module.ts" />
-    <TypeScriptCompile Include="app\person\person.component.ts" />
-    <TypeScriptCompile Include="app\person\person.ts" />
-    <TypeScriptCompile Include="app\person-detail\person-detail.component.ts" />
+    <TypeScriptCompile Include="app\component\person\person.module.ts" />
+    <TypeScriptCompile Include="app\component\person\person.component.ts" />
+    <TypeScriptCompile Include="app\component\person\person.ts" />
+    <TypeScriptCompile Include="app\component\person-detail\person-detail.component.ts" />
     <TypeScriptCompile Include="app\service\person.service.ts" />
   </ItemGroup>
   <ItemGroup>

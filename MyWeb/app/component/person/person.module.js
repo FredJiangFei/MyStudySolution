@@ -13,9 +13,9 @@ var common_1 = require('@angular/common');
 //import { BrowserModule } from '@angular/platform-browser';
 var forms_1 = require('@angular/forms');
 var person_component_1 = require('./person.component');
-var person_service_1 = require('../service/person.service');
+var person_service_1 = require('.../service/person.service');
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('../dashboard.component');
+var dashboard_component_1 = require('../dashboard/dashboard.component');
 var PersonModule = (function () {
     function PersonModule() {
     }

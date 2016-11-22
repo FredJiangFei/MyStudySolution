@@ -6,11 +6,11 @@ import { FormsModule }        from '@angular/forms';
 
 /* App Root */
 import { AppComponent }   from './app.component';
-import { DashboardComponent }   from './dashboard.component';
-import { PersonDetailComponent }   from './person-detail/person-detail.component';
+import { DashboardComponent }   from './component/dashboard/dashboard.component';
+import { PersonDetailComponent }   from './component/person-detail/person-detail.component';
 
 /* Person Imports */
-import { PersonModule }   from './person/person.module';
+import { PersonModule }   from './component/person/person.module';
 import { AppRoutingModule }     from './app-routing.module';
 
 /* Directive */

@@ -14,10 +14,10 @@ var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 /* App Root */
 var app_component_1 = require('./app.component');
-var dashboard_component_1 = require('./dashboard.component');
-var person_detail_component_1 = require('./person-detail/person-detail.component');
+var dashboard_component_1 = require('./component/dashboard/dashboard.component');
+var person_detail_component_1 = require('./component/person-detail/person-detail.component');
 /* Person Imports */
-var person_module_1 = require('./person/person.module');
+var person_module_1 = require('./component/person/person.module');
 var app_routing_module_1 = require('./app-routing.module');
 /* Directive */
 var highlight_directive_1 = require('./directive/highlight.directive');

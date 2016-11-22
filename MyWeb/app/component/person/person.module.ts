@@ -3,9 +3,9 @@ import { CommonModule }       from '@angular/common';
 //import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }        from '@angular/forms';
 import { PersonComponent }   from './person.component';
-import { PersonService }     from '../service/person.service';
+import { PersonService }     from '.../service/person.service';
 import { RouterModule }   from '@angular/router';
-import { DashboardComponent }   from '../dashboard.component';
+import { DashboardComponent }   from '../dashboard/dashboard.component';
 
 @NgModule({
     imports: [CommonModule, FormsModule, RouterModule.forRoot([
