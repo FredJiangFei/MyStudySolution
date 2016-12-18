@@ -11,21 +11,10 @@ import { AwesomePipe }        from './awesome.pipe';
 
 import { PersonDetailComponent }   from './person-detail.component';
 
+import { PersonRoutingModule } from './person-routing.module';
+
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule.forRoot([
-        // {
-        //     path: 'persons',
-        //     component: PersonComponent
-        // }, 
-        // {
-        //     path: 'dashboard',
-        //     component: DashboardComponent
-        // },
-        {
-            path: 'detail/:id',
-            component: PersonDetailComponent
-        }
-    ])],
+    imports: [CommonModule, FormsModule, PersonRoutingModule],
     declarations: [PersonComponent,HighlightDirective,AwesomePipe,PersonDetailComponent],
     exports: [PersonComponent],
     providers: [PersonService]

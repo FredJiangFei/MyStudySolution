@@ -12,6 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
+// import { RouterModule }   from '@angular/router';
 var forms_1 = require('@angular/forms');
 /* App Component */
 var app_component_1 = require('./app.component');
