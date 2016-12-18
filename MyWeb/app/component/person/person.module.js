@@ -15,24 +15,29 @@ var forms_1 = require('@angular/forms');
 var person_component_1 = require('./person.component');
 var person_service_1 = require('../../person.service');
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('../dashboard/dashboard.component');
 var highlight_directive_1 = require('./highlight.directive');
 var awesome_pipe_1 = require('./awesome.pipe');
+var person_detail_component_1 = require('./person-detail.component');
 var PersonModule = (function () {
     function PersonModule() {
     }
     PersonModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule, forms_1.FormsModule, router_1.RouterModule.forRoot([
+                    // {
+                    //     path: 'persons',
+                    //     component: PersonComponent
+                    // }, 
+                    // {
+                    //     path: 'dashboard',
+                    //     component: DashboardComponent
+                    // },
                     {
-                        path: 'persons',
-                        component: person_component_1.PersonComponent
-                    }, {
-                        path: 'dashboard',
-                        component: dashboard_component_1.DashboardComponent
+                        path: 'detail/:id',
+                        component: person_detail_component_1.PersonDetailComponent
                     }
                 ])],
-            declarations: [person_component_1.PersonComponent, highlight_directive_1.HighlightDirective, awesome_pipe_1.AwesomePipe],
+            declarations: [person_component_1.PersonComponent, highlight_directive_1.HighlightDirective, awesome_pipe_1.AwesomePipe, person_detail_component_1.PersonDetailComponent],
             exports: [person_component_1.PersonComponent],
             providers: [person_service_1.PersonService]
         }), 

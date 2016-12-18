@@ -9,17 +9,24 @@ import { DashboardComponent }   from '../dashboard/dashboard.component';
 import { HighlightDirective }   from './highlight.directive';
 import { AwesomePipe }        from './awesome.pipe';
 
+import { PersonDetailComponent }   from './person-detail.component';
+
 @NgModule({
     imports: [CommonModule, FormsModule, RouterModule.forRoot([
+        // {
+        //     path: 'persons',
+        //     component: PersonComponent
+        // }, 
+        // {
+        //     path: 'dashboard',
+        //     component: DashboardComponent
+        // },
         {
-            path: 'persons',
-            component: PersonComponent
-        }, {
-            path: 'dashboard',
-            component: DashboardComponent
+            path: 'detail/:id',
+            component: PersonDetailComponent
         }
     ])],
-    declarations: [PersonComponent,HighlightDirective,AwesomePipe],
+    declarations: [PersonComponent,HighlightDirective,AwesomePipe,PersonDetailComponent],
     exports: [PersonComponent],
     providers: [PersonService]
 })
