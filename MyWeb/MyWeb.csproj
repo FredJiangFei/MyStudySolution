@@ -230,6 +230,8 @@
   <ItemGroup>
     <Content Include="Angular\controller\person-controller.js" />
     <TypeScriptCompile Include="app\app-routing.module.ts" />
+    <TypeScriptCompile Include="app\component\person\awesome.pipe.ts" />
+    <TypeScriptCompile Include="app\component\person\highlight.directive.ts" />
     <TypeScriptCompile Include="app\contact\awesome.pipe.ts" />
     <TypeScriptCompile Include="app\contact\contact-routing.module.ts" />
     <TypeScriptCompile Include="app\contact\contact.module.ts" />
@@ -281,9 +283,10 @@
     <TypeScriptCompile Include="app\component\person\person.component.ts" />
     <TypeScriptCompile Include="app\component\person\person.ts" />
     <TypeScriptCompile Include="app\component\person-detail\person-detail.component.ts" />
-    <TypeScriptCompile Include="app\service\person.service.ts" />
+    <TypeScriptCompile Include="app\person.service.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\service\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

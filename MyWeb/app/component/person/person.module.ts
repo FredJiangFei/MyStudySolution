@@ -3,9 +3,11 @@ import { CommonModule }       from '@angular/common';
 //import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }        from '@angular/forms';
 import { PersonComponent }   from './person.component';
-import { PersonService }     from '.../service/person.service';
+import { PersonService }     from '../../person.service';
 import { RouterModule }   from '@angular/router';
 import { DashboardComponent }   from '../dashboard/dashboard.component';
+import { HighlightDirective }   from './highlight.directive';
+import { AwesomePipe }        from './awesome.pipe';
 
 @NgModule({
     imports: [CommonModule, FormsModule, RouterModule.forRoot([
@@ -17,7 +19,7 @@ import { DashboardComponent }   from '../dashboard/dashboard.component';
             component: DashboardComponent
         }
     ])],
-    declarations: [PersonComponent],
+    declarations: [PersonComponent,HighlightDirective,AwesomePipe],
     exports: [PersonComponent],
     providers: [PersonService]
 })

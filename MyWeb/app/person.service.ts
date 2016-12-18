@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Person } from '../component/person/person';
+import { Person } from './component/person/person';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';

@@ -1,4 +1,4 @@
-
+  
     <div class="row">
         <button type="button" class="btn btn-primary pull-right" (click)="showAddForm()">Create</button>
     </div>
@@ -16,9 +16,9 @@
             <tr *ngFor="let p of persons">
                 <td>{{p.Id}}</td>
                 <td>
-                    <a [routerLink]="['/detail', p.Id]">{{p.Name}}</a>
+                    <a [routerLink]="['/detail', p.Id]" highlight>{{p.Name | awesome}}</a>
                 </td>
-                 <td>{{p.Notes}}</td>
+                 <td>{{p.Notes| uppercase}}</td>
                 <td>
                     <button type="button" class="btn btn-primary" (click)="showEditForm(p)">
                         <span class="glyphicon glyphicon-edit"></span>

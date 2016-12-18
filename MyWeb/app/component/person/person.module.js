@@ -13,9 +13,11 @@ var common_1 = require('@angular/common');
 //import { BrowserModule } from '@angular/platform-browser';
 var forms_1 = require('@angular/forms');
 var person_component_1 = require('./person.component');
-var person_service_1 = require('.../service/person.service');
+var person_service_1 = require('../../person.service');
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('../dashboard/dashboard.component');
+var highlight_directive_1 = require('./highlight.directive');
+var awesome_pipe_1 = require('./awesome.pipe');
 var PersonModule = (function () {
     function PersonModule() {
     }
@@ -30,7 +32,7 @@ var PersonModule = (function () {
                         component: dashboard_component_1.DashboardComponent
                     }
                 ])],
-            declarations: [person_component_1.PersonComponent],
+            declarations: [person_component_1.PersonComponent, highlight_directive_1.HighlightDirective, awesome_pipe_1.AwesomePipe],
             exports: [person_component_1.PersonComponent],
             providers: [person_service_1.PersonService]
         }), 
