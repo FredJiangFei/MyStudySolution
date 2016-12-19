@@ -17,7 +17,7 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class PersonComponent implements OnInit {
-    persons: Person[];
+    persons: Observable<Person>;  //Person[];
     notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
     person: Person;
     active = true;
