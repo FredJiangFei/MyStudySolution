@@ -13,7 +13,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let p of persons">
+            <tr *ngFor="let p of persons | async"  [class.selected]="isSelected(p)" (click)="onSelect(p)">
                 <td>{{p.Id}}</td>
                 <td>
                     <a [routerLink]="['/detail', p.Id]" highlight>{{p.Name | awesome}}</a>

@@ -12,12 +12,19 @@ var core_1 = require('@angular/core');
 var person_1 = require('./person');
 var person_service_1 = require('../../person.service');
 require('rxjs/Rx');
+var router_1 = require('@angular/router');
+require('rxjs/add/operator/switchMap');
 var PersonComponent = (function () {
-    function PersonComponent(personService) {
+    function PersonComponent(personService, router, route) {
         this.personService = personService;
+        this.router = router;
+        this.route = route;
         this.notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
         this.active = true;
     }
+    PersonComponent.prototype.onSelect = function (person) {
+        this.router.navigate(['/detail', person.Id]);
+    };
     PersonComponent.prototype.onSubmit = function () {
         if (this.person.Id) {
             this.editPerson();
@@ -34,9 +41,13 @@ var PersonComponent = (function () {
     };
     PersonComponent.prototype.getPersons = function () {
         var _this = this;
-        this.personService.getPersons().subscribe(function (result) {
-            _this.persons = result;
-        }, function (error) { return console.log(error); });
+        this.persons = this.route.params.switchMap(function (params) {
+            _this.selectedId = +params['id'];
+            return _this.personService.getPersons();
+        });
+        // this.personService.getPersons().subscribe(result => {
+        //         this.persons = result;
+        //     }, error => console.log(error));
     };
     PersonComponent.prototype.addNewPerson = function () {
         var _this = this;
@@ -62,7 +73,12 @@ var PersonComponent = (function () {
             _this.getPersons();
         });
     };
+    PersonComponent.prototype.isSelected = function (person) { return person.Id === this.selectedId; };
     PersonComponent.prototype.ngOnInit = function () {
+        // this.persons =this.route.params.switchMap((params:Params)=>{
+        //         this.selectedId = +params['id'];
+        //         return this.personService.getPersons();
+        // })
         this.getPersons();
     };
     PersonComponent = __decorate([
@@ -72,7 +88,7 @@ var PersonComponent = (function () {
             templateUrl: 'person.component.html',
             styleUrls: ['person.component.css']
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.Router, router_1.ActivatedRoute])
     ], PersonComponent);
     return PersonComponent;
 }());

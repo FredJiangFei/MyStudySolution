@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var person_component_1 = require('./person.component');
 var person_detail_component_1 = require('./person-detail.component');
 var routes = [
     // {
@@ -20,6 +21,7 @@ var routes = [
     //     path: 'dashboard',
     //     component: DashboardComponent
     // },
+    { path: 'persons', component: person_component_1.PersonComponent },
     {
         path: 'detail/:id',
         component: person_detail_component_1.PersonDetailComponent

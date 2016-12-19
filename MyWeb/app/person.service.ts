@@ -21,15 +21,15 @@ export class PersonService {
             });
     }
 
-    getPerson(id: number) {
-        let url = 'api/Person?id='+id;
-        return this.http.get(url)
-            .map(responce => <Person>responce.json())
-            .catch(error => {
-                console.log(error);
-                return Observable.throw(error);
-            });
-    }
+     getPerson(id: number) {
+         let url = 'api/Person?id='+id;
+         return this.http.get(url)
+             .map(responce => <Person>responce.json())
+             .catch(error => {
+                 console.log(error);
+                 return Observable.throw(error);
+             });
+     }
 
     addPerson(item: Person): Observable<Response> {
         let url = 'api/Person'; 

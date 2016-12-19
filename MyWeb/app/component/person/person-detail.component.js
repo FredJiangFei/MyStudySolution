@@ -13,24 +13,66 @@ var person_1 = require('../person/person');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var person_service_1 = require('../../person.service');
+require('rxjs/add/operator/switchMap');
 var PersonDetailComponent = (function () {
-    function PersonDetailComponent(personService, route, location) {
+    function PersonDetailComponent(personService, route, location, router) {
         this.personService = personService;
         this.route = route;
         this.location = location;
+        this.router = router;
     }
+    Object.defineProperty(PersonDetailComponent.prototype, "routeAnimation", {
+        get: function () {
+            return true;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(PersonDetailComponent.prototype, "display", {
+        get: function () {
+            return 'block';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(PersonDetailComponent.prototype, "position", {
+        get: function () {
+            return 'absolute';
+        },
+        enumerable: true,
+        configurable: true
+    });
     PersonDetailComponent.prototype.goBack = function () {
-        this.location.back();
+        var personId = this.person ? this.person.Id : null;
+        this.router.navigate(['/persons', { id: personId, foo: 'foo' }]);
+        //        this.location.back();
     };
     PersonDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.forEach(function (params) {
-            var id = +params['id'];
-            _this.personService.getPerson(id).subscribe(function (result) {
-                _this.person = result;
-            }, function (error) { return console.log(error); });
-        });
+        this.route.params
+            .switchMap(function (params) { return _this.personService.getPerson(+params['id']); })
+            .subscribe(function (result) {
+            _this.person = result;
+        }, function (error) { return console.log(error); });
+        // this.route.params.forEach((params: Params) => {
+        //    let id = +params['id'];
+        //    this.personService.getPerson(id).subscribe(result => {
+        //        this.person = result;
+        //    }, error => console.log(error));
+        // });
     };
+    __decorate([
+        core_1.HostBinding('@routeAnimation'), 
+        __metadata('design:type', Object)
+    ], PersonDetailComponent.prototype, "routeAnimation", null);
+    __decorate([
+        core_1.HostBinding('style.display'), 
+        __metadata('design:type', Object)
+    ], PersonDetailComponent.prototype, "display", null);
+    __decorate([
+        core_1.HostBinding('style.position'), 
+        __metadata('design:type', Object)
+    ], PersonDetailComponent.prototype, "position", null);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', person_1.Person)
@@ -39,9 +81,21 @@ var PersonDetailComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'person-detail-app',
-            templateUrl: 'person-detail.component.html'
+            templateUrl: 'person-detail.component.html',
+            animations: [
+                core_1.trigger('routeAnimation', [
+                    core_1.state('*', core_1.style({ opacity: 1, transform: 'translateX(0)' })),
+                    core_1.transition(':enter', [
+                        core_1.style({ opacity: 0, transform: 'translateX(-100%)' }), core_1.animate('0.8s ease-in')
+                    ]),
+                    core_1.transition(':leave', [
+                        core_1.style({ opacity: 0, transform: 'translateY(100%)' }),
+                        core_1.animate('0.8s ease-out')
+                    ])
+                ])
+            ]
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location, router_1.Router])
     ], PersonDetailComponent);
     return PersonDetailComponent;
 }());

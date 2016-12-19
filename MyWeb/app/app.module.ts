@@ -12,6 +12,7 @@ import { DashboardComponent }   from './component/dashboard/dashboard.component'
 
 /* Custome Module */
 import { PersonModule }   from './component/person/person.module';
+//import { CrisisCenterModule }     from './component/crisis-center/crisis-center.module';
 
 /* Route Module */
 import { AppRoutingModule }     from './app-routing.module';

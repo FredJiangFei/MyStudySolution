@@ -9,23 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./component/dashboard/dashboard.component');
-var routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var CrisisCenterHomeComponent = (function () {
+    function CrisisCenterHomeComponent() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule]
+    CrisisCenterHomeComponent = __decorate([
+        core_1.Component({
+            template: "\n    <p>Welcome to the Crisis Center</p>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], CrisisCenterHomeComponent);
+    return CrisisCenterHomeComponent;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.CrisisCenterHomeComponent = CrisisCenterHomeComponent;
+//# sourceMappingURL=crisis-center-home.component - 复制.js.map

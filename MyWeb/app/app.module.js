@@ -19,6 +19,7 @@ var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./component/dashboard/dashboard.component');
 /* Custome Module */
 var person_module_1 = require('./component/person/person.module');
+//import { CrisisCenterModule }     from './component/crisis-center/crisis-center.module';
 /* Route Module */
 var app_routing_module_1 = require('./app-routing.module');
 /* Directive */
