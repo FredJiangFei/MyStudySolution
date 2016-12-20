@@ -17,8 +17,11 @@ var forms_1 = require('@angular/forms');
 /* App Component */
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./component/dashboard/dashboard.component');
+var login_component_1 = require('./component/login/login.component');
 /* Custome Module */
 var person_module_1 = require('./component/person/person.module');
+var admin_module_1 = require('./component/admin/admin.module');
+var login_routing_module_1 = require('./component/login/login-routing.module');
 //import { CrisisCenterModule }     from './component/crisis-center/crisis-center.module';
 /* Route Module */
 var app_routing_module_1 = require('./app-routing.module');
@@ -29,8 +32,8 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, person_module_1.PersonModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, highlight_directive_1.HighlightDirective],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, person_module_1.PersonModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, admin_module_1.AdminModule, login_routing_module_1.LoginRoutingModule],
+            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, highlight_directive_1.HighlightDirective, login_component_1.LoginComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

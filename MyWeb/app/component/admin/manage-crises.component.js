@@ -9,25 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./component/dashboard/dashboard.component');
-var can_deactivate_guard_service_1 = require('./can-deactivate-guard.service');
-var routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var ManageCrisesComponent = (function () {
+    function ManageCrisesComponent() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule],
-            providers: [can_deactivate_guard_service_1.CanDeactivateGuard]
+    ManageCrisesComponent = __decorate([
+        core_1.Component({
+            template: "\n    <p>Manage your crises here</p>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], ManageCrisesComponent);
+    return ManageCrisesComponent;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.ManageCrisesComponent = ManageCrisesComponent;
+//# sourceMappingURL=manage-crises.component.js.map

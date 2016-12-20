@@ -230,11 +230,22 @@
   <ItemGroup>
     <Content Include="Angular\controller\person-controller.js" />
     <TypeScriptCompile Include="app\app-routing.module.ts" />
+    <TypeScriptCompile Include="app\auth-guard.ts" />
+    <TypeScriptCompile Include="app\auth.service.ts" />
+    <TypeScriptCompile Include="app\can-deactivate-guard.service.ts" />
+    <TypeScriptCompile Include="app\component\admin\admin-dashboard.component.ts" />
+    <TypeScriptCompile Include="app\component\admin\admin-routing.module.ts" />
+    <TypeScriptCompile Include="app\component\admin\admin.component.ts" />
+    <TypeScriptCompile Include="app\component\admin\admin.module.ts" />
+    <TypeScriptCompile Include="app\component\admin\manage-crises.component.ts" />
+    <TypeScriptCompile Include="app\component\admin\manage-persons.component.ts" />
     <TypeScriptCompile Include="app\component\crisis-center\crisis-detail.component.ts" />
     <TypeScriptCompile Include="app\component\crisis-center\crisis-list.component.ts" />
     <TypeScriptCompile Include="app\component\crisis-center\crisis-center-home.component.ts" />
     <TypeScriptCompile Include="app\component\crisis-center\crisis-center-routing.module.ts" />
     <TypeScriptCompile Include="app\component\crisis-center\crisis-center.component.ts" />
+    <TypeScriptCompile Include="app\component\login\login-routing.module.ts" />
+    <TypeScriptCompile Include="app\component\login\login.component.ts" />
     <TypeScriptCompile Include="app\component\person\person-routing.module.ts" />
     <TypeScriptCompile Include="app\component\person\awesome.pipe.ts" />
     <TypeScriptCompile Include="app\component\person\highlight.directive.ts" />

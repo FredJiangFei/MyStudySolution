@@ -14,6 +14,7 @@ var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var person_service_1 = require('../../person.service');
 require('rxjs/add/operator/switchMap');
+//import { DialogService }        from './dialog.service';
 var PersonDetailComponent = (function () {
     function PersonDetailComponent(personService, route, location, router) {
         this.personService = personService;
@@ -45,7 +46,6 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent.prototype.goBack = function () {
         var personId = this.person ? this.person.Id : null;
         this.router.navigate(['/persons', { id: personId, foo: 'foo' }]);
-        //        this.location.back();
     };
     PersonDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -54,12 +54,14 @@ var PersonDetailComponent = (function () {
             .subscribe(function (result) {
             _this.person = result;
         }, function (error) { return console.log(error); });
-        // this.route.params.forEach((params: Params) => {
-        //    let id = +params['id'];
-        //    this.personService.getPerson(id).subscribe(result => {
-        //        this.person = result;
-        //    }, error => console.log(error));
-        // });
+    };
+    PersonDetailComponent.prototype.canDeactivate = function () {
+        console.log("123");
+        return false;
+        // if (!this.person || this.person.Name === this.editName) {
+        //     return true;
+        // }
+        // return this.dialogService.confirm('Discard changes?');
     };
     __decorate([
         core_1.HostBinding('@routeAnimation'), 

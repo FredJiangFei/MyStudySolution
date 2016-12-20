@@ -12,19 +12,13 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var person_component_1 = require('./person.component');
 var person_detail_component_1 = require('./person-detail.component');
+var can_deactivate_guard_service_1 = require('../../can-deactivate-guard.service');
 var routes = [
-    // {
-    //     path: 'persons',
-    //     component: PersonComponent
-    // }, 
-    // {
-    //     path: 'dashboard',
-    //     component: DashboardComponent
-    // },
     { path: 'persons', component: person_component_1.PersonComponent },
     {
         path: 'detail/:id',
-        component: person_detail_component_1.PersonDetailComponent
+        component: person_detail_component_1.PersonDetailComponent,
+        canDeactivate: [can_deactivate_guard_service_1.CanDeactivateGuard]
     }
 ];
 var PersonRoutingModule = (function () {

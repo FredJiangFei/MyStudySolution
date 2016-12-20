@@ -9,25 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./component/dashboard/dashboard.component');
-var can_deactivate_guard_service_1 = require('./can-deactivate-guard.service');
-var routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var CanDeactivateGuard = (function () {
+    function CanDeactivateGuard() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule],
-            providers: [can_deactivate_guard_service_1.CanDeactivateGuard]
-        }), 
+    CanDeactivateGuard.prototype.canDeactivate = function (component) {
+        return component.canDeactivate ? component.canDeactivate() : true;
+    };
+    CanDeactivateGuard = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], CanDeactivateGuard);
+    return CanDeactivateGuard;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.CanDeactivateGuard = CanDeactivateGuard;
+//# sourceMappingURL=can-deactivate-guard.service.js.map

@@ -7,6 +7,9 @@ import { Location }                 from '@angular/common';
 import { PersonService } from '../../person.service';
 import 'rxjs/add/operator/switchMap';
 
+//import { DialogService }        from './dialog.service';
+
+
 @Component({
     moduleId: module.id, // ??
     selector: 'person-detail-app',
@@ -44,6 +47,7 @@ export class PersonDetailComponent implements OnInit{
         private route: ActivatedRoute,
         private location: Location,
         private router: Router
+        //private dialogService: DialogService
     ) { }
 
     @Input()
@@ -52,7 +56,6 @@ export class PersonDetailComponent implements OnInit{
     goBack(): void {
         let personId = this.person ? this.person.Id:null;
         this.router.navigate(['/persons',{id:personId,foo:'foo'}]);
-//        this.location.back();
     }
 
     ngOnInit(): void {
@@ -61,13 +64,16 @@ export class PersonDetailComponent implements OnInit{
         .subscribe(result => {
                this.person = result;
            }, error => console.log(error))
+    }
 
-        // this.route.params.forEach((params: Params) => {
-        //    let id = +params['id'];
+    canDeactivate(): Promise<boolean> | boolean {
+        console.log("123");
+        return false;
+        
+        // if (!this.person || this.person.Name === this.editName) {
+        //     return true;
+        // }
 
-        //    this.personService.getPerson(id).subscribe(result => {
-        //        this.person = result;
-        //    }, error => console.log(error));
-        // });
+       // return this.dialogService.confirm('Discard changes?');
     }
 }

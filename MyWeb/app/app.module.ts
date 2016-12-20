@@ -8,10 +8,12 @@ import { FormsModule }        from '@angular/forms';
 /* App Component */
 import { AppComponent }   from './app.component';
 import { DashboardComponent }   from './component/dashboard/dashboard.component';
-
+import { LoginComponent }   from './component/login/login.component';
 
 /* Custome Module */
 import { PersonModule }   from './component/person/person.module';
+import { AdminModule }   from './component/admin/admin.module';
+import { LoginRoutingModule }   from './component/login/login-routing.module';
 //import { CrisisCenterModule }     from './component/crisis-center/crisis-center.module';
 
 /* Route Module */
@@ -22,8 +24,8 @@ import { HighlightDirective }  from './directive/highlight.directive';
 
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, PersonModule,FormsModule,AppRoutingModule],
-    declarations: [AppComponent, DashboardComponent,HighlightDirective],
+    imports: [BrowserModule, HttpModule, PersonModule, FormsModule, AppRoutingModule, AdminModule, LoginRoutingModule],
+    declarations: [AppComponent, DashboardComponent, HighlightDirective, LoginComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
