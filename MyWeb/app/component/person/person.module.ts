@@ -5,15 +5,13 @@ import { PersonComponent }   from './person.component';
 import { PersonService }     from './person.service';
 import { RouterModule }   from '@angular/router';
 import { HighlightDirective }   from './highlight.directive';
-import { AwesomePipe }        from './awesome.pipe';
 
 import { PersonDetailComponent }   from './person-detail.component';
-
 import { PersonRoutingModule } from './person-routing.module';
 
 @NgModule({
     imports: [CommonModule, FormsModule, PersonRoutingModule],
-    declarations: [PersonComponent,HighlightDirective,AwesomePipe,PersonDetailComponent],
+    declarations: [PersonComponent,HighlightDirective,PersonDetailComponent],
     exports: [PersonComponent],
     providers: [PersonService]
 })

@@ -242,7 +242,7 @@
     <TypeScriptCompile Include="app\component\login\login-routing.module.ts" />
     <TypeScriptCompile Include="app\component\login\login.component.ts" />
     <TypeScriptCompile Include="app\component\person\person-routing.module.ts" />
-    <TypeScriptCompile Include="app\component\person\awesome.pipe.ts" />
+    <TypeScriptCompile Include="app\shared\awesome.pipe.ts" />
     <TypeScriptCompile Include="app\component\person\highlight.directive.ts" />
     <TypeScriptCompile Include="app\component\person\person-detail.component.ts" />
     <Content Include="app\app.component.css" />

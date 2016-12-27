@@ -13,6 +13,7 @@ import { LoginComponent }   from './component/login/login.component';
 import { PersonModule }   from './component/person/person.module';
 import { AdminModule }   from './component/admin/admin.module';
 import { LoginRoutingModule }   from './component/login/login-routing.module';
+import { SharedModule }   from './shared/shared.module';
 
 /* Route Module */
 import { AppRoutingModule }     from './app-routing.module';
@@ -22,7 +23,8 @@ import { HighlightDirective }  from './directive/highlight.directive';
 
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, PersonModule, FormsModule, AppRoutingModule, AdminModule, LoginRoutingModule],
+    imports: [BrowserModule, HttpModule, PersonModule, SharedModule,
+        FormsModule, AppRoutingModule, AdminModule, LoginRoutingModule],
     declarations: [AppComponent, DashboardComponent, HighlightDirective, LoginComponent],
     bootstrap: [AppComponent]
 })

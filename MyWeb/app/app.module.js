@@ -21,6 +21,7 @@ var login_component_1 = require('./component/login/login.component');
 var person_module_1 = require('./component/person/person.module');
 var admin_module_1 = require('./component/admin/admin.module');
 var login_routing_module_1 = require('./component/login/login-routing.module');
+var shared_module_1 = require('./shared/shared.module');
 /* Route Module */
 var app_routing_module_1 = require('./app-routing.module');
 /* Directive */
@@ -30,7 +31,8 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, person_module_1.PersonModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, admin_module_1.AdminModule, login_routing_module_1.LoginRoutingModule],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, person_module_1.PersonModule, shared_module_1.SharedModule,
+                forms_1.FormsModule, app_routing_module_1.AppRoutingModule, admin_module_1.AdminModule, login_routing_module_1.LoginRoutingModule],
             declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, highlight_directive_1.HighlightDirective, login_component_1.LoginComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 

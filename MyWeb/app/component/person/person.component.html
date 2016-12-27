@@ -16,7 +16,7 @@
             <tr *ngFor="let p of persons | async"  [class.selected]="isSelected(p)" (click)="onSelect(p)">
                 <td>{{p.Id}}</td>
                 <td>
-                    <a [routerLink]="['/detail', p.Id]" highlight>{{p.Name | awesome}}</a>
+                    <a [routerLink]="['/detail', p.Id]" highlight>{{p.Name}}</a>
                 </td>
                  <td>{{p.Notes| uppercase}}</td>
                 <td>
