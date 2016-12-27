@@ -9,16 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CrisisCenterHomeComponent = (function () {
-    function CrisisCenterHomeComponent() {
+var common_1 = require('@angular/common');
+var CoreModule = (function () {
+    function CoreModule() {
     }
-    CrisisCenterHomeComponent = __decorate([
-        core_1.Component({
-            template: "\n    <p>Welcome to the Crisis Center</p>\n  "
+    CoreModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule],
         }), 
         __metadata('design:paramtypes', [])
-    ], CrisisCenterHomeComponent);
-    return CrisisCenterHomeComponent;
+    ], CoreModule);
+    return CoreModule;
 }());
-exports.CrisisCenterHomeComponent = CrisisCenterHomeComponent;
-//# sourceMappingURL=crisis-center-home.component - 复制.js.map
+exports.CoreModule = CoreModule;
+//# sourceMappingURL=core.module.js.map

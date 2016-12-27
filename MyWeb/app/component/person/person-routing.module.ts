@@ -5,7 +5,9 @@ import { PersonDetailComponent }   from './person-detail.component';
 import { CanDeactivateGuard }    from '../../can-deactivate-guard.service';
 
 const routes: Routes = [
-      {path: 'persons',component: PersonComponent}, 
+      {
+            path: 'persons',
+            component: PersonComponent}, 
       {
             path: 'detail/:id', 
             component: PersonDetailComponent,

@@ -14,7 +14,9 @@ var person_component_1 = require('./person.component');
 var person_detail_component_1 = require('./person-detail.component');
 var can_deactivate_guard_service_1 = require('../../can-deactivate-guard.service');
 var routes = [
-    { path: 'persons', component: person_component_1.PersonComponent },
+    {
+        path: 'persons',
+        component: person_component_1.PersonComponent },
     {
         path: 'detail/:id',
         component: person_detail_component_1.PersonDetailComponent,

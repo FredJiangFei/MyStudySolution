@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var person_1 = require('./person');
-var person_service_1 = require('../../person.service');
+var person_service_1 = require('./person.service');
 require('rxjs/Rx');
 var router_1 = require('@angular/router');
 require('rxjs/add/operator/switchMap');

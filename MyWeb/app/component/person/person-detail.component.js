@@ -9,12 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_1 = require('../person/person');
+var person_1 = require('./person');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
-var person_service_1 = require('../../person.service');
+var person_service_1 = require('./person.service');
 require('rxjs/add/operator/switchMap');
-//import { DialogService }        from './dialog.service';
 var PersonDetailComponent = (function () {
     function PersonDetailComponent(personService, route, location, router) {
         this.personService = personService;

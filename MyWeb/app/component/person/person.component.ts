@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,trigger,
+        state,
+        style,
+        transition,
+        animate } from '@angular/core';
 import { Person } from './person';
-import { PersonService } from '../../person.service';
+import { PersonService } from './person.service';
 import 'rxjs/Rx';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -13,11 +17,10 @@ import { Observable } from 'rxjs/Observable';
     selector: 'person-app',
     templateUrl:'person.component.html',
     styleUrls: ['person.component.css']
-    //providers: [PersonService]
 })
 
 export class PersonComponent implements OnInit {
-    persons: Observable<Person>;  //Person[];
+    persons: Observable<Person>;
     notes = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
     person: Person;
     active = true;

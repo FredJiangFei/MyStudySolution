@@ -12,7 +12,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
-// import { RouterModule }   from '@angular/router';
 var forms_1 = require('@angular/forms');
 /* App Component */
 var app_component_1 = require('./app.component');
@@ -22,7 +21,6 @@ var login_component_1 = require('./component/login/login.component');
 var person_module_1 = require('./component/person/person.module');
 var admin_module_1 = require('./component/admin/admin.module');
 var login_routing_module_1 = require('./component/login/login-routing.module');
-//import { CrisisCenterModule }     from './component/crisis-center/crisis-center.module';
 /* Route Module */
 var app_routing_module_1 = require('./app-routing.module');
 /* Directive */

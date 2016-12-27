@@ -1,13 +1,11 @@
 import { Component, Input, OnInit, HostBinding,
          trigger, transition, animate,
          style, state } from '@angular/core';
-import { Person } from '../person/person';
+import { Person } from './person';
 import { Router,ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { PersonService } from '../../person.service';
+import { PersonService } from './person.service';
 import 'rxjs/add/operator/switchMap';
-
-//import { DialogService }        from './dialog.service';
 
 
 @Component({
@@ -19,7 +17,6 @@ import 'rxjs/add/operator/switchMap';
       state('*',style({opacity: 1,transform: 'translateX(0)'})),
       transition(':enter', [
         style({opacity: 0,transform: 'translateX(-100%)'}),animate('0.8s ease-in')
-        //animate('0.8s ease-in',style({opacity: 0,transform: 'translateX(-100%)'}))
       ]),
       transition(':leave', [
         style({opacity: 0,transform: 'translateY(100%)'}),
@@ -47,7 +44,6 @@ export class PersonDetailComponent implements OnInit{
         private route: ActivatedRoute,
         private location: Location,
         private router: Router
-        //private dialogService: DialogService
     ) { }
 
     @Input()

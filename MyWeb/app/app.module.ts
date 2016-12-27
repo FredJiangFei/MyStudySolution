@@ -2,7 +2,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
-// import { RouterModule }   from '@angular/router';
 import { FormsModule }        from '@angular/forms';
 
 /* App Component */
@@ -14,7 +13,6 @@ import { LoginComponent }   from './component/login/login.component';
 import { PersonModule }   from './component/person/person.module';
 import { AdminModule }   from './component/admin/admin.module';
 import { LoginRoutingModule }   from './component/login/login-routing.module';
-//import { CrisisCenterModule }     from './component/crisis-center/crisis-center.module';
 
 /* Route Module */
 import { AppRoutingModule }     from './app-routing.module';

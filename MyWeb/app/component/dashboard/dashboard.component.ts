@@ -2,6 +2,6 @@
 
 @Component({
     selector: 'my-dashboard',
-    template: '<h3>My Dashboard</h3>'
+    template: '<h3>My Dashboard 123</h3>'
 })
 export class DashboardComponent { }

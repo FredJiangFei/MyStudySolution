@@ -239,11 +239,6 @@
     <TypeScriptCompile Include="app\component\admin\admin.module.ts" />
     <TypeScriptCompile Include="app\component\admin\manage-crises.component.ts" />
     <TypeScriptCompile Include="app\component\admin\manage-persons.component.ts" />
-    <TypeScriptCompile Include="app\component\crisis-center\crisis-detail.component.ts" />
-    <TypeScriptCompile Include="app\component\crisis-center\crisis-list.component.ts" />
-    <TypeScriptCompile Include="app\component\crisis-center\crisis-center-home.component.ts" />
-    <TypeScriptCompile Include="app\component\crisis-center\crisis-center-routing.module.ts" />
-    <TypeScriptCompile Include="app\component\crisis-center\crisis-center.component.ts" />
     <TypeScriptCompile Include="app\component\login\login-routing.module.ts" />
     <TypeScriptCompile Include="app\component\login\login.component.ts" />
     <TypeScriptCompile Include="app\component\person\person-routing.module.ts" />
@@ -291,11 +286,13 @@
     <Content Include="Views\Shared\_MVCAjax.cshtml" />
     <Content Include="systemjs.config.js" />
     <TypeScriptCompile Include="app\component\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\core\core.module.ts" />
     <TypeScriptCompile Include="app\directive\highlight.directive.ts" />
     <TypeScriptCompile Include="app\component\person\person.module.ts" />
     <TypeScriptCompile Include="app\component\person\person.component.ts" />
     <TypeScriptCompile Include="app\component\person\person.ts" />
-    <TypeScriptCompile Include="app\person.service.ts" />
+    <TypeScriptCompile Include="app\component\person\person.service.ts" />
+    <TypeScriptCompile Include="app\shared\shared.module.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\service\" />
