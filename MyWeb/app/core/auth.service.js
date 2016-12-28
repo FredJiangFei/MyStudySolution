@@ -9,21 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var auth_service_1 = require('./auth.service');
-var CoreModule = (function () {
-    function CoreModule() {
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/observable/of');
+require('rxjs/add/operator/do');
+require('rxjs/add/operator/delay');
+var AuthService = (function () {
+    function AuthService() {
+        this.isLoggedIn = false;
     }
-    CoreModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule],
-            // declarations: [TitleComponent],
-            // exports: [TitleComponent],
-            providers: [auth_service_1.AuthService]
-        }), 
+    AuthService.prototype.login = function () {
+        var _this = this;
+        return Observable_1.Observable.of(true).delay(1000).do(function (val) { return _this.isLoggedIn = true; });
+    };
+    AuthService.prototype.logout = function () {
+        this.isLoggedIn = false;
+    };
+    AuthService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], CoreModule);
-    return CoreModule;
+    ], AuthService);
+    return AuthService;
 }());
-exports.CoreModule = CoreModule;
-//# sourceMappingURL=core.module.js.map
+exports.AuthService = AuthService;
+//# sourceMappingURL=auth.service.js.map

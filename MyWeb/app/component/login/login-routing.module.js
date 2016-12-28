@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var auth_guard_1 = require('../../auth-guard');
-var auth_service_1 = require('../../auth.service');
+var auth_service_1 = require('../../core/auth.service');
 var login_component_1 = require('./login.component');
 var loginRoutes = [
     { path: 'login', component: login_component_1.LoginComponent }

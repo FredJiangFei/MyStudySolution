@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var auth_service_1 = require('../../auth.service');
+var auth_service_1 = require('../../core/auth.service');
 var LoginComponent = (function () {
     function LoginComponent(authService, router) {
         this.authService = authService;
@@ -26,10 +26,7 @@ var LoginComponent = (function () {
         this.authService.login().subscribe(function () {
             _this.setMessage();
             if (_this.authService.isLoggedIn) {
-                // Get the redirect URL from our auth service
-                // If no redirect has been set, use the default
                 var redirect = _this.authService.redirectUrl ? _this.authService.redirectUrl : '/crisis-center/admin';
-                // Redirect the user
                 _this.router.navigate([redirect]);
             }
         });

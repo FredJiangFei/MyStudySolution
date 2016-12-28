@@ -17,8 +17,23 @@ var DashboardComponent = (function () {
             console.log("Hello, " + person.firstName + " " + person.lastName);
         }
         var user = new Student("Jane", "M.", "User");
-        //var user = "Jane User";
         greeter(user);
+        var name = "Fred";
+        var age = 37;
+        var sentence = "Hello, my name is " + name + ".\n        I'll be " + (age + 1) + " years old next month.";
+        console.log(sentence);
+        var x;
+        x = ['hello', 10];
+        console.log(x[0].substr(1));
+        var Color;
+        (function (Color) {
+            Color[Color["Red"] = 1] = "Red";
+            Color[Color["Green"] = 2] = "Green";
+            Color[Color["Blue"] = 3] = "Blue";
+        })(Color || (Color = {}));
+        ;
+        var colorName = Color[2];
+        console.log(colorName);
     };
     DashboardComponent = __decorate([
         core_1.Component({
