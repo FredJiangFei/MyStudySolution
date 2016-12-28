@@ -12,14 +12,32 @@ var core_1 = require('@angular/core');
 var DashboardComponent = (function () {
     function DashboardComponent() {
     }
+    DashboardComponent.prototype.testCode = function () {
+        function greeter(person) {
+            console.log("Hello, " + person.firstName + " " + person.lastName);
+        }
+        var user = new Student("Jane", "M.", "User");
+        //var user = "Jane User";
+        greeter(user);
+    };
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'my-dashboard',
-            template: '<h3>My Dashboard 123</h3>'
+            template: '<h3>My Dashboard</h3>' +
+                '<button (click)="testCode()">Test</button>'
         }), 
         __metadata('design:paramtypes', [])
     ], DashboardComponent);
     return DashboardComponent;
 }());
 exports.DashboardComponent = DashboardComponent;
+var Student = (function () {
+    function Student(firstName, middleInitial, lastName) {
+        this.firstName = firstName;
+        this.middleInitial = middleInitial;
+        this.lastName = lastName;
+        this.fullName = firstName + " " + middleInitial + " " + lastName;
+    }
+    return Student;
+}());
 //# sourceMappingURL=dashboard.component.js.map
