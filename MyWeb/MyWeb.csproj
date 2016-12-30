@@ -241,8 +241,8 @@
     <TypeScriptCompile Include="app\component\login\login-routing.module.ts" />
     <TypeScriptCompile Include="app\component\login\login.component.ts" />
     <TypeScriptCompile Include="app\component\person\person-routing.module.ts" />
-    <TypeScriptCompile Include="app\error\dashboard.component.ts" />
-    <TypeScriptCompile Include="app\home\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\error\error.component.ts" />
+    <TypeScriptCompile Include="app\home\home.component.ts" />
     <TypeScriptCompile Include="app\shared\awesome.pipe.ts" />
     <TypeScriptCompile Include="app\component\person\highlight.directive.ts" />
     <TypeScriptCompile Include="app\component\person\person-detail.component.ts" />
@@ -296,7 +296,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\component\NewFolder1\" />
-    <Folder Include="app\service\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
