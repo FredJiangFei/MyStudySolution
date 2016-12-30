@@ -10,11 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./component/dashboard/dashboard.component');
+var home_component_1 = require('./home/home.component');
+var error_component_1 = require('./error/error.component');
 var can_deactivate_guard_service_1 = require('./can-deactivate-guard.service');
 var routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent }
+    { path: '', component: home_component_1.HomeComponent },
+    { path: '**', component: error_component_1.ErrorComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

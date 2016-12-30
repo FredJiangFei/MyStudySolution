@@ -1,11 +1,11 @@
 ﻿import { Component } from '@angular/core';
 
 @Component({
-    selector: 'my-dashboard',
-    template: '<h3>My Dashboard</h3>' +
+    selector: 'my-home',
+    template: '<h3>My Home</h3>' +
         '<button (click)="testCode()">Test</button>'
 })
-export class DashboardComponent {
+export class HomeComponent {
     testCode() {
         function greeter(person: Person) {
             console.log("Hello, " + person.firstName + " " + person.lastName);

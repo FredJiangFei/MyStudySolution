@@ -10,21 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
-var awesome_pipe_1 = require('./awesome.pipe');
-var highlight_directive_1 = require('./highlight.directive');
-var SharedModule = (function () {
-    function SharedModule() {
+var login_routing_module_1 = require('./login-routing.module');
+var login_component_1 = require('./login.component');
+var LoginModule = (function () {
+    function LoginModule() {
     }
-    SharedModule = __decorate([
+    LoginModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective],
-            exports: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective, common_1.CommonModule, forms_1.FormsModule]
+            imports: [
+                common_1.CommonModule,
+                login_routing_module_1.LoginRoutingModule
+            ],
+            declarations: [
+                login_component_1.LoginComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], SharedModule);
-    return SharedModule;
+    ], LoginModule);
+    return LoginModule;
 }());
-exports.SharedModule = SharedModule;
-//# sourceMappingURL=shared.module.js.map
+exports.LoginModule = LoginModule;
+//# sourceMappingURL=login.module.js.map

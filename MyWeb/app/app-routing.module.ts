@@ -1,13 +1,14 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent }   from './component/dashboard/dashboard.component';
+import { HomeComponent }   from './home/home.component';
+import { ErrorComponent }   from './error/error.component';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 
 
 const routes: Routes = [
-    {path: '',redirectTo: '/dashboard', pathMatch: 'full'},
-    {path: 'dashboard',component: DashboardComponent}
+     { path: '', component: HomeComponent },
+     { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({
