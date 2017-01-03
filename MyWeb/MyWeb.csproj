@@ -295,7 +295,6 @@
     <TypeScriptCompile Include="app\shared\shared.module.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\component\NewFolder1\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

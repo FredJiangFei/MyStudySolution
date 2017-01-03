@@ -22,9 +22,11 @@ var HomeComponent = (function () {
         var age = 37;
         var sentence = "Hello, my name is " + name + ".\n        I'll be " + (age + 1) + " years old next month.";
         console.log(sentence);
+        //元组 Tuple
         var x;
         x = ['hello', 10];
         console.log(x[0].substr(1));
+        //枚举
         var Color;
         (function (Color) {
             Color[Color["Red"] = 1] = "Red";
@@ -34,6 +36,29 @@ var HomeComponent = (function () {
         ;
         var colorName = Color[2];
         console.log(colorName);
+        //任意值
+        var notSure = 4;
+        notSure = "maybe a string instead";
+        notSure = false;
+        var list = [1, true, "free"];
+        list[1] = 100;
+        //空值
+        function warnUser() {
+            alert("This is my warning message");
+        }
+        var unusable = undefined;
+        // 返回never的函数必须存在无法达到的终点
+        //类型断言
+        var someValue = "this is a string";
+        var strLength = someValue.length;
+        //解构
+        var input = [1, 2];
+        var f = input[0], second = input[1];
+        console.log(f);
+        console.log(second);
+        var _a = [1, 2, 3, 4], first = _a[0], rest = _a.slice(1);
+        console.log(first);
+        console.log(rest);
     };
     HomeComponent = __decorate([
         core_1.Component({

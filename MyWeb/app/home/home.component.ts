@@ -21,14 +21,47 @@ export class HomeComponent {
 
         console.log(sentence);
 
-
+        //元组 Tuple
         let x: [string, number];
         x = ['hello', 10];
         console.log(x[0].substr(1));
         
+        //枚举
         enum Color {Red = 1, Green, Blue};
         let colorName: string = Color[2];
         console.log(colorName);
+        
+        //任意值
+        let notSure :any =4;
+        notSure = "maybe a string instead";
+        notSure=false;
+
+        let list: any[] = [1, true, "free"];
+        list[1] = 100;
+
+        //空值
+        function warnUser():void  {
+            alert("This is my warning message");
+        }
+
+        let unusable : void = undefined;
+
+       // 返回never的函数必须存在无法达到的终点
+
+       //类型断言
+       let someValue :any ="this is a string";
+       let strLength:number =(<string>someValue).length;
+
+        //解构
+        let input = [1, 2];
+        let [f, second] = input;
+        console.log(f); 
+        console.log(second); 
+
+        let [first, ...rest] = [1, 2, 3, 4];
+        console.log(first); 
+        console.log(rest); 
+
         
     }
 }
