@@ -30,7 +30,7 @@ export class PersonComponent implements OnInit {
                 private route: ActivatedRoute) { }
 
     onSelect(person: Person) {
-        this.router.navigate(['/detail', person.Id]);
+        this.router.navigate(['/persons', person.Id]);
     }
 
     onSubmit() {

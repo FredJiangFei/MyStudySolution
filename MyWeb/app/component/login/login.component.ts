@@ -25,7 +25,7 @@ export class LoginComponent {
             this.setMessage();
             if (this.authService.isLoggedIn) {
                
-                let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/crisis-center/admin';
+                let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
                 this.router.navigate([redirect]);
             }
         });

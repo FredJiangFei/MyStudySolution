@@ -26,7 +26,7 @@ var LoginComponent = (function () {
         this.authService.login().subscribe(function () {
             _this.setMessage();
             if (_this.authService.isLoggedIn) {
-                var redirect = _this.authService.redirectUrl ? _this.authService.redirectUrl : '/crisis-center/admin';
+                var redirect = _this.authService.redirectUrl ? _this.authService.redirectUrl : '/admin';
                 _this.router.navigate([redirect]);
             }
         });

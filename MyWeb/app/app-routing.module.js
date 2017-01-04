@@ -14,6 +14,14 @@ var home_component_1 = require('./home/home.component');
 var error_component_1 = require('./error/error.component');
 var can_deactivate_guard_service_1 = require('./can-deactivate-guard.service');
 var routes = [
+    {
+        path: 'admin',
+        loadChildren: 'app/component/admin/admin.module#AdminModule'
+    },
+    {
+        path: 'login',
+        loadChildren: 'app/component/login/login.module#LoginModule'
+    },
     { path: '', component: home_component_1.HomeComponent },
     { path: '**', component: error_component_1.ErrorComponent }
 ];

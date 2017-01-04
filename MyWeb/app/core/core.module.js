@@ -17,8 +17,6 @@ var CoreModule = (function () {
     CoreModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule],
-            // declarations: [TitleComponent],
-            // exports: [TitleComponent],
             providers: [auth_service_1.AuthService]
         }), 
         __metadata('design:paramtypes', [])

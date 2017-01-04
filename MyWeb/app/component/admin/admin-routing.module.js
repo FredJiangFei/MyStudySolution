@@ -11,26 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var admin_component_1 = require('./admin.component');
-var manage_crises_component_1 = require('./manage-crises.component');
-var manage_persons_component_1 = require('./manage-persons.component');
-var admin_dashboard_component_1 = require('./admin-dashboard.component');
 var auth_guard_1 = require('../../auth-guard');
 var adminRoutes = [
     {
-        path: 'admin',
+        path: '',
         component: admin_component_1.AdminComponent,
-        canActivate: [auth_guard_1.AuthGuard],
-        children: [
-            {
-                path: '',
-                canActivateChild: [auth_guard_1.AuthGuard],
-                children: [
-                    { path: 'crises', component: manage_crises_component_1.ManageCrisesComponent },
-                    { path: 'heroes', component: manage_persons_component_1.ManagePersonsComponent },
-                    { path: '', component: admin_dashboard_component_1.AdminDashboardComponent }
-                ]
-            }
-        ]
+        canActivate: [auth_guard_1.AuthGuard]
     }
 ];
 var AdminRoutingModule = (function () {

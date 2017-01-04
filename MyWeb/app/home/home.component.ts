@@ -62,6 +62,19 @@ export class HomeComponent {
         console.log(first); 
         console.log(rest); 
 
+        let [getfirst] = [1,2,3,4];
+        console.log(getfirst);
+
+        //对象解构
+        let o = {
+            a: "foo",
+            b: 12,
+            c: "bar"
+        }
+        let { a, b } = o;
+        console.log(a);
+        console.log(b);
+
         
     }
 }

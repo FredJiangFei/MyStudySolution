@@ -240,6 +240,7 @@
     <TypeScriptCompile Include="app\component\admin\manage-persons.component.ts" />
     <TypeScriptCompile Include="app\component\login\login-routing.module.ts" />
     <TypeScriptCompile Include="app\component\login\login.component.ts" />
+    <TypeScriptCompile Include="app\component\login\login.module.ts" />
     <TypeScriptCompile Include="app\component\person\person-routing.module.ts" />
     <TypeScriptCompile Include="app\error\error.component.ts" />
     <TypeScriptCompile Include="app\home\home.component.ts" />

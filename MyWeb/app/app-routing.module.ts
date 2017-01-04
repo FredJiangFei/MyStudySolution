@@ -7,6 +7,14 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
 
 
 const routes: Routes = [
+    {   
+      path: 'admin',
+      loadChildren: 'app/component/admin/admin.module#AdminModule'
+     },
+     {   
+      path: 'login',
+      loadChildren: 'app/component/login/login.module#LoginModule'
+     },
      { path: '', component: HomeComponent },
      { path: '**', component: ErrorComponent }
 ];

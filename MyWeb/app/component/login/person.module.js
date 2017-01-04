@@ -9,32 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var person_component_1 = require('./person.component');
+var person_service_1 = require('./person.service');
+var highlight_directive_1 = require('./highlight.directive');
 var person_detail_component_1 = require('./person-detail.component');
-var can_deactivate_guard_service_1 = require('../../can-deactivate-guard.service');
-var routes = [
-    {
-        path: 'persons',
-        component: person_component_1.PersonComponent
-    },
-    {
-        path: 'persons/:id',
-        component: person_detail_component_1.PersonDetailComponent,
-        canDeactivate: [can_deactivate_guard_service_1.CanDeactivateGuard]
+var person_routing_module_1 = require('./person-routing.module');
+var PersonModule = (function () {
+    function PersonModule() {
     }
-];
-var PersonRoutingModule = (function () {
-    function PersonRoutingModule() {
-    }
-    PersonRoutingModule = __decorate([
+    PersonModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forChild(routes)],
-            exports: [router_1.RouterModule]
+            imports: [common_1.CommonModule, forms_1.FormsModule, person_routing_module_1.PersonRoutingModule],
+            declarations: [person_component_1.PersonComponent, highlight_directive_1.HighlightDirective, person_detail_component_1.PersonDetailComponent],
+            exports: [person_component_1.PersonComponent],
+            providers: [person_service_1.PersonService]
         }), 
         __metadata('design:paramtypes', [])
-    ], PersonRoutingModule);
-    return PersonRoutingModule;
+    ], PersonModule);
+    return PersonModule;
 }());
-exports.PersonRoutingModule = PersonRoutingModule;
-//# sourceMappingURL=person-routing.module.js.map
+exports.PersonModule = PersonModule;
+//# sourceMappingURL=person.module.js.map

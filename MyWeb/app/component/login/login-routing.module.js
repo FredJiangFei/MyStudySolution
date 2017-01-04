@@ -10,27 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var auth_guard_1 = require('../../auth-guard');
-var auth_service_1 = require('../../core/auth.service');
 var login_component_1 = require('./login.component');
 var loginRoutes = [
-    { path: 'login', component: login_component_1.LoginComponent }
+    {
+        path: '',
+        component: login_component_1.LoginComponent
+    }
 ];
 var LoginRoutingModule = (function () {
     function LoginRoutingModule() {
     }
     LoginRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [
-                router_1.RouterModule.forChild(loginRoutes)
-            ],
-            exports: [
-                router_1.RouterModule
-            ],
-            providers: [
-                auth_guard_1.AuthGuard,
-                auth_service_1.AuthService
-            ]
+            imports: [router_1.RouterModule.forChild(loginRoutes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
     ], LoginRoutingModule);

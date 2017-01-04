@@ -23,7 +23,7 @@ var PersonComponent = (function () {
         this.active = true;
     }
     PersonComponent.prototype.onSelect = function (person) {
-        this.router.navigate(['/detail', person.Id]);
+        this.router.navigate(['/persons', person.Id]);
     };
     PersonComponent.prototype.onSubmit = function () {
         if (this.person.Id) {

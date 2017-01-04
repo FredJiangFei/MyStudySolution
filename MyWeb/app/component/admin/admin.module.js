@@ -15,6 +15,7 @@ var admin_dashboard_component_1 = require('./admin-dashboard.component');
 var manage_crises_component_1 = require('./manage-crises.component');
 var manage_persons_component_1 = require('./manage-persons.component');
 var admin_routing_module_1 = require('./admin-routing.module');
+var auth_guard_1 = require('../../auth-guard');
 var AdminModule = (function () {
     function AdminModule() {
     }
@@ -29,6 +30,9 @@ var AdminModule = (function () {
                 admin_dashboard_component_1.AdminDashboardComponent,
                 manage_crises_component_1.ManageCrisesComponent,
                 manage_persons_component_1.ManagePersonsComponent
+            ],
+            providers: [
+                auth_guard_1.AuthGuard
             ]
         }), 
         __metadata('design:paramtypes', [])

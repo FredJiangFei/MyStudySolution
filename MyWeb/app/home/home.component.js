@@ -59,6 +59,17 @@ var HomeComponent = (function () {
         var _a = [1, 2, 3, 4], first = _a[0], rest = _a.slice(1);
         console.log(first);
         console.log(rest);
+        var getfirst = [1, 2, 3, 4][0];
+        console.log(getfirst);
+        //对象解构
+        var o = {
+            a: "foo",
+            b: 12,
+            c: "bar"
+        };
+        var a = o.a, b = o.b;
+        console.log(a);
+        console.log(b);
     };
     HomeComponent = __decorate([
         core_1.Component({
