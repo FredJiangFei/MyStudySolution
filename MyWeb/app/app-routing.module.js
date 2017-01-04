@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var home_component_1 = require('./home/home.component');
 var error_component_1 = require('./error/error.component');
-var can_deactivate_guard_service_1 = require('./can-deactivate-guard.service');
 var routes = [
     {
         path: 'admin',
@@ -31,8 +30,7 @@ var AppRoutingModule = (function () {
     AppRoutingModule = __decorate([
         core_1.NgModule({
             imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule],
-            providers: [can_deactivate_guard_service_1.CanDeactivateGuard]
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
     ], AppRoutingModule);

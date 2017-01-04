@@ -9,20 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var auth_service_1 = require('./auth.service');
-var can_deactivate_guard_service_1 = require('./can-deactivate-guard.service');
-var CoreModule = (function () {
-    function CoreModule() {
+var CanDeactivateGuard = (function () {
+    function CanDeactivateGuard() {
     }
-    CoreModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule],
-            providers: [auth_service_1.AuthService, can_deactivate_guard_service_1.CanDeactivateGuard]
-        }), 
+    CanDeactivateGuard.prototype.canDeactivate = function (component) {
+        return component.canDeactivate ? component.canDeactivate() : true;
+    };
+    CanDeactivateGuard = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], CoreModule);
-    return CoreModule;
+    ], CanDeactivateGuard);
+    return CanDeactivateGuard;
 }());
-exports.CoreModule = CoreModule;
-//# sourceMappingURL=core.module.js.map
+exports.CanDeactivateGuard = CanDeactivateGuard;
+//# sourceMappingURL=can-deactivate-guard.service.js.map

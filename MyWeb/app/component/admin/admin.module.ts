@@ -7,7 +7,7 @@ import { ManageCrisesComponent }    from './manage-crises.component';
 import { ManagePersonsComponent }    from './manage-persons.component';
 import { AdminRoutingModule }       from './admin-routing.module';
 
-import { AuthGuard }                from '../../auth-guard';
+import { AuthGuard }                from '../../core/auth-guard';
 
 @NgModule({
     imports: [

@@ -15,7 +15,7 @@ var admin_dashboard_component_1 = require('./admin-dashboard.component');
 var manage_crises_component_1 = require('./manage-crises.component');
 var manage_persons_component_1 = require('./manage-persons.component');
 var admin_routing_module_1 = require('./admin-routing.module');
-var auth_guard_1 = require('../../auth-guard');
+var auth_guard_1 = require('../../core/auth-guard');
 var AdminModule = (function () {
     function AdminModule() {
     }
