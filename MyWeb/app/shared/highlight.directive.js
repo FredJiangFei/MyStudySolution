@@ -11,9 +11,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var HighlightDirective = (function () {
     function HighlightDirective(renderer, el) {
-        renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gold');
-        console.log("* AppRoot highlight called for " + el.nativeElement.tagName);
+        this.renderer = renderer;
+        this.el = el;
+        this._defaultColor = 'red';
+        //renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gold');
     }
+    Object.defineProperty(HighlightDirective.prototype, "defaultColor", {
+        set: function (colorName) {
+            this._defaultColor = colorName || this._defaultColor;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    HighlightDirective.prototype.onMouseEnter = function () {
+        this.highlight(this.highlightColor || this._defaultColor);
+    };
+    HighlightDirective.prototype.onMouseLeave = function () {
+        this.highlight(null);
+    };
+    HighlightDirective.prototype.highlight = function (color) {
+        this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', color);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String), 
+        __metadata('design:paramtypes', [String])
+    ], HighlightDirective.prototype, "defaultColor", null);
+    __decorate([
+        core_1.Input('highlightColor'), 
+        __metadata('design:type', String)
+    ], HighlightDirective.prototype, "highlightColor", void 0);
+    __decorate([
+        core_1.HostListener('mouseenter'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], HighlightDirective.prototype, "onMouseEnter", null);
+    __decorate([
+        core_1.HostListener('mouseleave'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], HighlightDirective.prototype, "onMouseLeave", null);
     HighlightDirective = __decorate([
         core_1.Directive({
             selector: '[highlight]'

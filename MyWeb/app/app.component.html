@@ -1,6 +1,12 @@
 <div class="container">
     <div class="row">
-        <h1 highlight>{{title | awesome}}</h1>
+        <h1 highlight [highlightColor]="color"  [defaultColor]="'violet'">{{title | awesome}}</h1>
+    </div>
+    <h4>Pick a highlight color</h4>
+    <div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
     </div>
   <div class="row">
     <nav>

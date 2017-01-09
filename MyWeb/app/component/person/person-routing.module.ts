@@ -2,7 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonComponent }   from './person.component';
 import { PersonDetailComponent }   from './person-detail.component';
-import { CanDeactivateGuard }    from '../../can-deactivate-guard.service';
+import { CanDeactivateGuard }    from '../../core/can-deactivate-guard.service';
 
 const routes: Routes = [
       {

@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var person_component_1 = require('./person.component');
 var person_detail_component_1 = require('./person-detail.component');
-var can_deactivate_guard_service_1 = require('../../can-deactivate-guard.service');
+var can_deactivate_guard_service_1 = require('../../core/can-deactivate-guard.service');
 var routes = [
     {
         path: 'persons',
