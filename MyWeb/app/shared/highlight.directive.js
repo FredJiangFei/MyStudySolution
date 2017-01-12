@@ -14,7 +14,6 @@ var HighlightDirective = (function () {
         this.renderer = renderer;
         this.el = el;
         this._defaultColor = 'red';
-        //renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gold');
     }
     Object.defineProperty(HighlightDirective.prototype, "defaultColor", {
         set: function (colorName) {
@@ -33,14 +32,14 @@ var HighlightDirective = (function () {
         this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', color);
     };
     __decorate([
+        core_1.Input('highlightColor'), 
+        __metadata('design:type', String)
+    ], HighlightDirective.prototype, "highlightColor", void 0);
+    __decorate([
         core_1.Input(), 
         __metadata('design:type', String), 
         __metadata('design:paramtypes', [String])
     ], HighlightDirective.prototype, "defaultColor", null);
-    __decorate([
-        core_1.Input('highlightColor'), 
-        __metadata('design:type', String)
-    ], HighlightDirective.prototype, "highlightColor", void 0);
     __decorate([
         core_1.HostListener('mouseenter'), 
         __metadata('design:type', Function), 

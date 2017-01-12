@@ -7,15 +7,13 @@ import { Directive, ElementRef,HostListener, Input, Renderer } from '@angular/co
 export class HighlightDirective {
    private _defaultColor = 'red';
 
-  constructor(private renderer: Renderer,private el: ElementRef) {
-    //renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gold');
-  }
+  constructor(private renderer: Renderer,private el: ElementRef) {  }
+
+  @Input('highlightColor') highlightColor: string;
 
   @Input() set defaultColor(colorName:string){
     this._defaultColor=colorName||this._defaultColor;
   }
-
-  @Input('highlightColor') highlightColor: string;
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.highlightColor || this._defaultColor);
