@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+    // constructor (private wikipediaService: WikipediaService) { }
+
     title = 'Tour of Persons';
+    // items: Observable<string[]>;
+    //
+    // search (term: string) {
+    //     this.items = this.wikipediaService.search(term);
+    // }
 }

@@ -10,46 +10,45 @@ import 'rxjs/add/operator/toPromise';
 
 export class PersonService {
     constructor(private http: Http) { }
+    headers = new Headers({ 'Content-Type': 'application/json' });
+    options = new RequestOptions({ headers: this.headers });
 
-    getPersons(){
+    getPersons(): Observable<Person[]>{
         let url = 'api/Persons';
         return this.http.get(url)
-            .map(responce => <Person[]>responce.json())
-            .catch(error => {
-                console.log(error);
-                return Observable.throw(error);
-            });
+                    .map(this.extractData)
+                    .catch(this.handleError);
     }
 
-     getPerson(id: number) {
+     getPerson(id: number):Observable<Person> {
          let url = 'api/Person?id='+id;
          return this.http.get(url)
-             .map(responce => <Person>responce.json())
-             .catch(error => {
-                 console.log(error);
-                 return Observable.throw(error);
-             });
+                     .map(this.extractData)
+                     .catch(this.handleError);
      }
 
     addPerson(item: Person): Observable<Response> {
         let url = 'api/Person'; 
-        let body = JSON.stringify(item);   
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-
-        return this.http.post(url, body, options);
+        return this.http.post(url, JSON.stringify(item), this.options);
     }
 
     updatePerson(item: Person): Observable<Response> {
         let url = 'api/Person';
-        let body = JSON.stringify(item);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.put(url, body, options);
+        return this.http.put(url, JSON.stringify(item), this.options);
     }
 
     deletePerson(id: string): Observable<Response> {
         let url = 'api/Person?id='+id;
         return this.http.delete(url);
+    }
+
+    private extractData(res: Response) {
+        let body = res.json();
+        return body || { };
+    }
+
+    private handleError (error: Response | any) {
+        console.log(error);
+        return Observable.throw(error);
     }
 }

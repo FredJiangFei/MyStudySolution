@@ -3,7 +3,6 @@ import { Component, Input, OnInit, HostBinding,
          style, state } from '@angular/core';
 import { Person } from './person';
 import { Router,ActivatedRoute, Params }   from '@angular/router';
-import { Location }                 from '@angular/common';
 import { PersonService } from './person.service';
 import 'rxjs/add/operator/switchMap';
 
@@ -42,7 +41,6 @@ export class PersonDetailComponent implements OnInit{
     constructor(
         private personService: PersonService,
         private route: ActivatedRoute,
-        private location: Location,
         private router: Router
     ) { }
 
@@ -57,9 +55,7 @@ export class PersonDetailComponent implements OnInit{
     ngOnInit(): void {
         this.route.params
         .switchMap((params: Params) => this.personService.getPerson(+params['id']))
-        .subscribe(result => {
-               this.person = result;
-           }, error => console.log(error))
+        .subscribe(result => { this.person = result; })
     }
 
     canDeactivate(): Promise<boolean> | boolean {

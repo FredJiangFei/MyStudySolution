@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        // constructor (private wikipediaService: WikipediaService) { }
         this.title = 'Tour of Persons';
     }
     AppComponent = __decorate([

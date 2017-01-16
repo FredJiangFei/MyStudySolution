@@ -2,6 +2,12 @@
     <div class="row">
         <h1 highlight [highlightColor]="color"  [defaultColor]="'violet'">{{title | awesome}}</h1>
     </div>
+
+    <input #term (keyup)="search(term.value)"/>
+    <ul>
+        <li *ngFor="let item of items | async">{{item}}</li>
+    </ul>
+
     <h4>Pick a highlight color</h4>
     <div>
     <input type="radio" name="colors" (click)="color='lightgreen'">Green

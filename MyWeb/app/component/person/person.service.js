@@ -17,42 +17,40 @@ require('rxjs/add/operator/toPromise');
 var PersonService = (function () {
     function PersonService(http) {
         this.http = http;
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.options = new http_1.RequestOptions({ headers: this.headers });
     }
     PersonService.prototype.getPersons = function () {
         var url = 'api/Persons';
         return this.http.get(url)
-            .map(function (responce) { return responce.json(); })
-            .catch(function (error) {
-            console.log(error);
-            return Observable_1.Observable.throw(error);
-        });
+            .map(this.extractData)
+            .catch(this.handleError);
     };
     PersonService.prototype.getPerson = function (id) {
         var url = 'api/Person?id=' + id;
         return this.http.get(url)
-            .map(function (responce) { return responce.json(); })
-            .catch(function (error) {
-            console.log(error);
-            return Observable_1.Observable.throw(error);
-        });
+            .map(this.extractData)
+            .catch(this.handleError);
     };
     PersonService.prototype.addPerson = function (item) {
         var url = 'api/Person';
-        var body = JSON.stringify(item);
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post(url, body, options);
+        return this.http.post(url, JSON.stringify(item), this.options);
     };
     PersonService.prototype.updatePerson = function (item) {
         var url = 'api/Person';
-        var body = JSON.stringify(item);
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.put(url, body, options);
+        return this.http.put(url, JSON.stringify(item), this.options);
     };
     PersonService.prototype.deletePerson = function (id) {
         var url = 'api/Person?id=' + id;
         return this.http.delete(url);
+    };
+    PersonService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    PersonService.prototype.handleError = function (error) {
+        console.log(error);
+        return Observable_1.Observable.throw(error);
     };
     PersonService = __decorate([
         core_1.Injectable(), 

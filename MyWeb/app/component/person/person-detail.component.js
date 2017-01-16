@@ -11,14 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var person_1 = require('./person');
 var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
 var person_service_1 = require('./person.service');
 require('rxjs/add/operator/switchMap');
 var PersonDetailComponent = (function () {
-    function PersonDetailComponent(personService, route, location, router) {
+    function PersonDetailComponent(personService, route, router) {
         this.personService = personService;
         this.route = route;
-        this.location = location;
         this.router = router;
     }
     Object.defineProperty(PersonDetailComponent.prototype, "routeAnimation", {
@@ -50,9 +48,7 @@ var PersonDetailComponent = (function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.personService.getPerson(+params['id']); })
-            .subscribe(function (result) {
-            _this.person = result;
-        }, function (error) { return console.log(error); });
+            .subscribe(function (result) { _this.person = result; });
     };
     PersonDetailComponent.prototype.canDeactivate = function () {
         console.log("123");
@@ -96,7 +92,7 @@ var PersonDetailComponent = (function () {
                 ])
             ]
         }), 
-        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location, router_1.Router])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, router_1.Router])
     ], PersonDetailComponent);
     return PersonDetailComponent;
 }());
