@@ -3,6 +3,9 @@
         <h1 highlight [highlightColor]="color"  [defaultColor]="'violet'">{{title | awesome}}</h1>
     </div>
 
+    <input type="text" [(ngModel)]="power">
+    <on-changes [power]="power"></on-changes>
+
     <h4>Pick a highlight color</h4>
     <div>
     <input type="radio" name="colors" (click)="color='lightgreen'">Green

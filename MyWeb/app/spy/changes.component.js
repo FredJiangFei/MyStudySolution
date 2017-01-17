@@ -9,20 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Persons';
+var OnChangesComponent = (function () {
+    function OnChangesComponent() {
     }
-    AppComponent = __decorate([
+    OnChangesComponent.prototype.ngOnChanges = function (changes) {
+        for (var propName in changes) {
+            var chng = changes[propName];
+            var cur = JSON.stringify(chng.currentValue);
+            var prev = JSON.stringify(chng.previousValue);
+            console.log(propName + ": currentValue = " + cur + ", previousValue = " + prev);
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], OnChangesComponent.prototype, "power", void 0);
+    OnChangesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css']
+            template: '',
+            selector: 'on-changes'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], OnChangesComponent);
+    return OnChangesComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.OnChangesComponent = OnChangesComponent;
+//# sourceMappingURL=changes.component.js.map

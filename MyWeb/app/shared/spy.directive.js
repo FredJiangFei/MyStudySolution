@@ -9,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
-var awesome_pipe_1 = require('./awesome.pipe');
-var highlight_directive_1 = require('./highlight.directive');
-var spy_directive_1 = require("../spy/spy.directive");
-var SharedModule = (function () {
-    function SharedModule() {
+var SpyDirective = (function () {
+    function SpyDirective() {
     }
-    SharedModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective, spy_directive_1.SpyDirective],
-            exports: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective, spy_directive_1.SpyDirective, common_1.CommonModule, forms_1.FormsModule]
-        }), 
+    SpyDirective.prototype.ngOnInit = function () { this.logIt("onInit"); };
+    SpyDirective.prototype.ngOnDestroy = function () { this.logIt("onDestroy"); };
+    SpyDirective.prototype.logIt = function (msg) {
+        console.log("Spy # " + msg);
+    };
+    SpyDirective = __decorate([
+        core_1.Directive({ selector: '[mySpy]' }), 
         __metadata('design:paramtypes', [])
-    ], SharedModule);
-    return SharedModule;
+    ], SpyDirective);
+    return SpyDirective;
 }());
-exports.SharedModule = SharedModule;
-//# sourceMappingURL=shared.module.js.map
+exports.SpyDirective = SpyDirective;
+//# sourceMappingURL=spy.directive.js.map

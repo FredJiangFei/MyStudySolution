@@ -16,11 +16,12 @@ import { CoreModule }   from './core/core.module';
 
 /* Route Module */
 import { AppRoutingModule }     from './app-routing.module';
+import {OnChangesComponent} from "./spy/changes.component";
 
 @NgModule({
     imports: [BrowserModule, HttpModule, PersonModule, SharedModule,CoreModule,
               FormsModule, AppRoutingModule],
-    declarations: [AppComponent,HomeComponent,ErrorComponent],
+    declarations: [AppComponent,HomeComponent,ErrorComponent,OnChangesComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

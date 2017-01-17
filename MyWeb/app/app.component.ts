@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
     moduleId: module.id, // ??
     selector: 'my-app',
@@ -7,13 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['app.component.css']
 })
 
-export class AppComponent {
-    // constructor (private wikipediaService: WikipediaService) { }
-
+export class AppComponent{
     title = 'Tour of Persons';
-    // items: Observable<string[]>;
-    //
-    // search (term: string) {
-    //     this.items = this.wikipediaService.search(term);
-    // }
 }

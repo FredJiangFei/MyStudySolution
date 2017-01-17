@@ -246,7 +246,6 @@
     <TypeScriptCompile Include="app\error\error.component.ts" />
     <TypeScriptCompile Include="app\home\home.component.ts" />
     <TypeScriptCompile Include="app\shared\awesome.pipe.ts" />
-    <TypeScriptCompile Include="app\component\person\highlight.directive.ts" />
     <TypeScriptCompile Include="app\component\person\person-detail.component.ts" />
     <Content Include="app\app.component.css" />
     <Content Include="app\component\person\person-detail.component.html" />
@@ -296,6 +295,8 @@
     <TypeScriptCompile Include="app\component\person\person.service.ts" />
     <TypeScriptCompile Include="app\shared\shared.module.ts" />
     <TypeScriptCompile Include="app\core\wikipedia.service.ts" />
+    <TypeScriptCompile Include="app\spy\changes.component.ts" />
+    <TypeScriptCompile Include="app\spy\spy.directive.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
