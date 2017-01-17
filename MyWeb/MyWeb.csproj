@@ -295,6 +295,7 @@
     <TypeScriptCompile Include="app\component\person\person.service.ts" />
     <TypeScriptCompile Include="app\shared\shared.module.ts" />
     <TypeScriptCompile Include="app\core\wikipedia.service.ts" />
+    <TypeScriptCompile Include="app\spy\check.component.ts" />
     <TypeScriptCompile Include="app\spy\changes.component.ts" />
     <TypeScriptCompile Include="app\spy\spy.directive.ts" />
   </ItemGroup>
